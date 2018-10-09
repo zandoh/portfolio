@@ -1,0 +1,15 @@
+.header-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .particles {
+    background: $grey;
+  }
+  .content {
+    position: absolute;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+  }
+}
