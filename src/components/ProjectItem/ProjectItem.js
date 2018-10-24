@@ -8,7 +8,23 @@ class Project extends React.Component {
   }
 
   render = () => {
-    return <React.Fragment>{this.props.fields.title}</React.Fragment>;
+    const {
+      title,
+      techStack,
+      url,
+      sortOrder,
+      image,
+      description
+    } = this.props.fields;
+    return (
+      <div className="project-container">
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          Link
+        </a>
+      </div>
+    );
   };
 }
 

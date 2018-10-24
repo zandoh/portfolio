@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./Projects.scss";
 import * as contentful from "contentful";
 import Project from "../../components/ProjectItem/ProjectItem";
@@ -41,4 +42,9 @@ class Projects extends React.Component {
     );
   };
 }
+
+Projects.propTypes = {
+  theme: PropTypes.object
+};
+
 export default Projects;

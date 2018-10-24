@@ -2,14 +2,37 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  .particles {
-    background: $grey;
+  .name {
+    // color: $yellow;
+    font-family: $roboto;
+    font-size: 4rem;
+    margin-bottom: 8rem;
+
+    @include mediaQueryM {
+      font-size: 3rem;
+      margin-bottom: 4rem;
+    }
   }
-  .content {
-    position: absolute;
+
+  .link-container {
     display: flex;
-    justify-self: center;
-    align-self: center;
+
+    .link {
+      // color: $yellow;
+      height: auto;
+      width: 80px;
+      margin-right: 50px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @include mediaQueryM {
+        width: 50px;
+      }
+    }
   }
 }
