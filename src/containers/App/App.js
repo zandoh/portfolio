@@ -9,7 +9,7 @@ import {
   themes
 } from "../../components/Shared/Shared";
 import { ThemeParticles } from "../../components/Shared/Util";
-import { withTheme, ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import { PaintBrush as ThemeChanger } from "styled-icons/fa-solid/PaintBrush";
 
 class App extends Component {
@@ -68,4 +68,4 @@ class App extends Component {
   }
 }
 
-export default withTheme(App);
+export default App;

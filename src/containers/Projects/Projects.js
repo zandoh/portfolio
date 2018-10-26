@@ -27,8 +27,16 @@ class Projects extends React.Component {
   };
 
   setProjects = response => {
+    const projects = [...response.items];
+
+    projects.sort((a, b) => {
+      let aSort = a.fields.sortOrder === undefined ? -1 : a.fields.sortOrder;
+      let bSort = b.fields.sortOrder === undefined ? -1 : b.fields.sortOrder;
+      return bSort - aSort;
+    });
+
     this.setState({
-      projects: response.items
+      projects: projects
     });
   };
 
@@ -36,7 +44,7 @@ class Projects extends React.Component {
     return (
       <React.Fragment>
         {this.state.projects.map((project, index) => {
-          return <Project fields={project.fields} key={index} id={index} />;
+          return <Project fields={project.fields} key={`project-${index}`} />;
         })}
       </React.Fragment>
     );
