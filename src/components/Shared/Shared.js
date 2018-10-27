@@ -42,6 +42,42 @@ const themes = [
     backgroundColor: "#35393C",
     fontColor: "#88292F",
     particleColor: "#fff"
+  },
+  {
+    // blue on black
+    backgroundColor: "#2E382E",
+    fontColor: "#5CC8FF",
+    particleColor: "#5CC8FF"
+  },
+  {
+    // purple on white
+    backgroundColor: "#fff",
+    fontColor: "#9883E5",
+    particleColor: "#9883E5"
+  },
+  {
+    // pens colors - yellow on black
+    backgroundColor: "#FCB514",
+    fontColor: "#000",
+    particleColor: "#000"
+  },
+  {
+    // blue on white
+    backgroundColor: "#fff",
+    fontColor: "#357DED",
+    particleColor: "#357DED"
+  },
+  {
+    // white on green
+    backgroundColor: "#44AF69",
+    fontColor: "#fff",
+    particleColor: "#fff"
+  },
+  {
+    // green on black
+    backgroundColor: "#00171F",
+    fontColor: "#8AEA92",
+    particleColor: "#8AEA92"
   }
 ];
 
