@@ -20,34 +20,38 @@ class Header extends React.Component {
         </h1>
         <div className="link-container">
           <a
-            className="link"
+            className="link rubberBand"
             href={links.github}
             target="_blank"
             rel="noopener noreferrer"
+            title="Github"
           >
             <Github style={{ color: `${this.props.theme.fontColor}` }} />
           </a>
           <a
-            className="link"
+            className="link rubberBand"
             href={links.twitter}
             target="_blank"
             rel="noopener noreferrer"
+            title="Twitter"
           >
             <Twitter style={{ color: `${this.props.theme.fontColor}` }} />
           </a>
           <a
-            className="link"
+            className="link rubberBand"
             href={links.linkedin}
             target="_blank"
             rel="noopener noreferrer"
+            title="Linkedin"
           >
             <Linkedin style={{ color: `${this.props.theme.fontColor}` }} />
           </a>
           <a
-            className="link"
+            className="link rubberBand"
             href={links.resume}
             target="_blank"
             rel="noopener noreferrer"
+            title="Resume"
           >
             <FilePdf style={{ color: `${this.props.theme.fontColor}` }} />
           </a>

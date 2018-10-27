@@ -44,9 +44,10 @@ class App extends Component {
           <GlobalStyle />
           <ThemeChanger
             size="30"
-            className="theme-changer"
+            className="theme-changer rubberBand"
             onClick={() => this.changeTheme()}
             style={{ color: `${this.state.theme.fontColor}` }}
+            title="Change Theme"
           />
           <div className="particles-container">
             <Particles
