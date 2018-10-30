@@ -44,7 +44,13 @@ class Projects extends React.Component {
     return (
       <React.Fragment>
         {this.state.projects.map((project, index) => {
-          return <Project fields={project.fields} key={`project-${index}`} />;
+          return (
+            <Project
+              fields={project.fields}
+              key={`project-${index}`}
+              theme={this.props.theme}
+            />
+          );
         })}
       </React.Fragment>
     );

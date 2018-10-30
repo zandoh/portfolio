@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./ProjectItem.scss";
 
 class Project extends React.Component {
   constructor(props) {
@@ -17,10 +18,37 @@ class Project extends React.Component {
       description
     } = this.props.fields;
     return (
-      <div className="project-container">
-        <h2>{title}</h2>
-        <p>{description}</p>
-        <a href={url} target="_blank" rel="noopener noreferrer">
+      <div
+        className="project-container"
+        style={{
+          borderColor: `${this.props.theme.fontColor}`
+        }}
+      >
+        <h2
+          className="title"
+          style={{
+            color: `${this.props.theme.fontColor}`
+          }}
+        >
+          {title}
+        </h2>
+        <p
+          className="description"
+          style={{
+            color: `${this.props.theme.fontColor}`
+          }}
+        >
+          {description}
+        </p>
+        <a
+          className="link"
+          style={{
+            color: `${this.props.theme.fontColor}`
+          }}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Link
         </a>
       </div>

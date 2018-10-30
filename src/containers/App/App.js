@@ -60,7 +60,7 @@ class App extends Component {
           <AppSection>
             <Header theme={this.state.theme} />
           </AppSection>
-          <AppSection flexDir="row">
+          <AppSection flexDir="row" flexWrap="wrap">
             <Projects theme={this.state.theme} />
           </AppSection>
         </React.Fragment>

@@ -8,11 +8,12 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const AppSection = styled.section`
-  height: ${props => (props.height ? props.height : "100vh")};
+  min-height: ${props => (props.height ? props.height : "100vh")};
   width: ${props => (props.width ? props.width : "100vw")};
   display: ${props => (props.display ? props.display : "flex")};
   flex: ${props => (props.flex ? props.flex : "0 1 auto")};
   flex-direction: ${props => (props.flexDir ? props.flexDir : "column")};
+  flex-wrap: ${props => (props.flexWrap ? props.flexWrap : "")};
   justify-content: ${props =>
     props.justifyContent ? props.justifyContent : "center"};
   overflow: hidden;
