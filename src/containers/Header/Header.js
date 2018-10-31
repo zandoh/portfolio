@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Header.scss";
 import { Twitter, Github, Linkedin } from "styled-icons/fa-brands";
-import { FilePdf } from "styled-icons/fa-solid";
 
 const links = {
   github: "https://github.com/zandoh",
@@ -16,7 +15,7 @@ class Header extends React.Component {
     return (
       <div className="header-container">
         <h1 className="name" style={{ color: `${this.props.theme.fontColor}` }}>
-          Zac Clark
+          Hey, I'm Zac Clark
         </h1>
         <div className="link-container">
           <a
@@ -45,15 +44,6 @@ class Header extends React.Component {
             title="Linkedin"
           >
             <Linkedin style={{ color: `${this.props.theme.fontColor}` }} />
-          </a>
-          <a
-            className="link rubberBand"
-            href={links.resume}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Resume"
-          >
-            <FilePdf style={{ color: `${this.props.theme.fontColor}` }} />
           </a>
         </div>
       </div>
