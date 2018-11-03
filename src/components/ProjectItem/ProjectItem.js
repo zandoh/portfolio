@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./ProjectItem.scss";
+import ReactMarkdown from "react-markdown";
 
 class Project extends React.Component {
   constructor(props) {
@@ -38,19 +39,31 @@ class Project extends React.Component {
             color: `${this.props.theme.fontColor}`
           }}
         >
-          {description}
+          <ReactMarkdown source={description} />
         </p>
-        <a
-          className="link"
-          style={{
-            color: `${this.props.theme.fontColor}`
-          }}
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Link
-        </a>
+        {techStack && (
+          <React.Fragment>
+            <p>Built with: </p>
+            <ul>
+              {techStack.map((tech, i) => (
+                <li>{tech}</li>
+              ))}
+            </ul>
+          </React.Fragment>
+        )}
+        {url && (
+          <a
+            className="link"
+            style={{
+              color: `${this.props.theme.fontColor}`
+            }}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit Project
+          </a>
+        )}
       </div>
     );
   };
