@@ -42,13 +42,21 @@ module.exports = {
     extensions: ["*", ".js", ".jsx"]
   },
   output: {
-    path: __dirname + "/public",
+    path: __dirname + "/build",
     publicPath: "/",
     filename: "bundle.js"
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: JSON.stringify("production")
+      }
+    })
+  ],
   devServer: {
-    contentBase: "./public",
+    contentBase: "./build",
     hot: true
-  }
+  },
+  devtool: "cheap-module-source-map"
 };

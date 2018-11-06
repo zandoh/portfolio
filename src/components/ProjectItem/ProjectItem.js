@@ -42,14 +42,19 @@ class Project extends React.Component {
           <ReactMarkdown source={description} />
         </p>
         {techStack && (
-          <React.Fragment>
+          <div
+            className="techstack-container"
+            style={{
+              color: `${this.props.theme.fontColor}`
+            }}
+          >
             <p>Built with: </p>
             <ul>
               {techStack.map((tech, i) => (
                 <li>{tech}</li>
               ))}
             </ul>
-          </React.Fragment>
+          </div>
         )}
         {url && (
           <a

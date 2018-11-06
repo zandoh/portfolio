@@ -102,7 +102,7 @@ const ThemeParticles = color => {
         }
       }
     },
-    retina_detect: true
+    retina_detect: false
   };
 };
 
