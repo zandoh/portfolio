@@ -7,7 +7,7 @@
   border: 1px solid;
   border-radius: 20px;
 
-  @include mediaQueryS {
+  @include mediaQueryM {
     flex: 1 1 100%;
   }
 
