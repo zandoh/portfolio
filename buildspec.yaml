@@ -13,11 +13,10 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws s3 rm $S3_OUTPUT --recursive
-      - aws s3 cp --recursive --acl public-read ./ $S3_OUTPUT/
+      - aws s3 rm s3://zclabs.io --recursive
+      - aws s3 cp --recursive --acl public-read ./build s3://zclabs.io/
 artifacts:
   files:
-    - "**/*"
-    - "!node_modules/*"
+    - "build/*"
   base-directory: "/"
   discard-paths: no
