@@ -15,7 +15,7 @@ class Header extends React.Component {
     return (
       <div className="header-container">
         <h1 className="name" style={{ color: `${this.props.theme.fontColor}` }}>
-          Hey, I'm Zac Clark.
+          Hey, I'm Zac Clark
         </h1>
         <div className="link-container">
           <a
