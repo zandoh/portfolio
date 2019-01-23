@@ -1,4 +1,7 @@
-version: 0.1
+version: 0.2
+env:
+  variables:
+    S3_OUTPUT: "s3://zclabs.io"
 phases:
   pre_build:
     commands:
@@ -8,6 +11,13 @@ phases:
     commands:
       - echo Build started on `date`
       - npm run build
+  post_build:
+    commands:
+      - aws s3 rm $S3_OUTPUT --recursive
+      - aws s3 cp --recursive --acl public-read ./ $S3_OUTPUT/
 artifacts:
   files:
     - "**/*"
+    - "!node_modules/*"
+  base-directory: "/"
+  discard-paths: no
