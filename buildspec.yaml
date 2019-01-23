@@ -17,6 +17,6 @@ phases:
       - aws s3 cp --recursive --acl public-read ./build s3://zclabs.io/
 artifacts:
   files:
-    - "build/*"
+    - "build/**/*"
   base-directory: "/"
   discard-paths: no
