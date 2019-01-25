@@ -21,9 +21,9 @@ const AppSection = styled.section`
 
 const themes = [
   {
-    // yellow on blue
-    backgroundColor: "#2b4162",
-    fontColor: "#fa9f42",
+    // white on green
+    backgroundColor: "#44AF69",
+    fontColor: "#fff",
     particleColor: "#fff"
   },
   {
@@ -69,9 +69,9 @@ const themes = [
     particleColor: "#357DED"
   },
   {
-    // white on green
-    backgroundColor: "#44AF69",
-    fontColor: "#fff",
+    // yellow on blue
+    backgroundColor: "#2b4162",
+    fontColor: "#fa9f42",
     particleColor: "#fff"
   },
   {
