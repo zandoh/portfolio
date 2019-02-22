@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./App.scss";
-
+import injectSheet from "react-jss";
+import styles from "./appStyles";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -8,12 +8,14 @@ class App extends Component {
   }
 
   render() {
+    const { classes } = this.props;
+
     return (
-      <React.Fragment>
-        <aside className="sidebar-container">
+      <div className={classes.app}>
+        <aside className={classes.sidebar}>
           <h1>sidebar</h1>
         </aside>
-        <main className="main-container">
+        <main className={classes.main}>
           <h1>main</h1>
           <h1>main</h1>
           <h1>main</h1>
@@ -51,9 +53,9 @@ class App extends Component {
           <h1>main</h1>
           <h1>main</h1>
         </main>
-      </React.Fragment>
+      </div>
     );
   }
 }
 
-export default App;
+export default injectSheet(styles)(App);
