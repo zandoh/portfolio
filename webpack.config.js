@@ -28,7 +28,7 @@ module.exports = {
             loader: "sass-loader",
             options: {
               sourceMap: true,
-              data: '@import "variables";',
+              data: '@import "root";',
               includePaths: [path.join(__dirname, "src")]
             }
           }
