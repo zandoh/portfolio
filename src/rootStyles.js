@@ -19,7 +19,7 @@ export default {
   mixins: {
     xl: "@media all and (max-width: 1199px)",
     l: "@media all and (max-width: 991px)",
-    m: "@media (max-width: 768px)",
+    m: "@media all (max-width: 768px)",
     s: "@media all and (max-width: 575px)",
     xs: "@media all and (max-width: 400px)"
   }

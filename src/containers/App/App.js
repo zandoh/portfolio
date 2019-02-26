@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import injectSheet from "react-jss";
 import styles from "./appStyles";
+import Sidebar from "../../components/Sidebar/Sidebar";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -9,12 +10,9 @@ class App extends Component {
 
   render() {
     const { classes } = this.props;
-
     return (
       <div className={classes.app}>
-        <aside className={classes.sidebar}>
-          <h1>sidebar</h1>
-        </aside>
+        <Sidebar styling={classes.sidebar} />
         <main className={classes.main}>
           <h1>main</h1>
           <h1>main</h1>

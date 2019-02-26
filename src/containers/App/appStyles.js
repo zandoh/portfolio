@@ -1,9 +1,11 @@
 const styles = theme => ({
-  body: {
-    margin: 0,
-    overflow: "hidden",
-    [`${theme.mixins.l}`]: {
-      overflow: "auto"
+  "@global": {
+    body: {
+      margin: 0,
+      overflow: "hidden",
+      [`${theme.mixins.l}`]: {
+        overflow: "auto"
+      }
     }
   },
   app: {
