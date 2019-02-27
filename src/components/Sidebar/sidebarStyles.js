@@ -1,9 +1,9 @@
 const styles = theme => ({
   sidebar: {
     display: "flex",
-    flexDirection: "column",
+    flexFlow: "row wrap",
     alignItems: "center",
-    marginTop: "50px"
+    paddingTop: "50px"
   },
   img: {
     filter: "grayscale(100%)",
@@ -14,6 +14,11 @@ const styles = theme => ({
   title: {
     marginTop: "45px",
     fontSize: "25px"
+  },
+  iconContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    width: "100%"
   }
 });
 

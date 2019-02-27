@@ -20,11 +20,13 @@ const styles = theme => ({
   sidebar: {
     background: theme.dark.light,
     width: "225px",
-    minHeight: "100vh",
+    maxHeight: "100vh",
+    height: "100vh",
     padding: "1rem",
     flex: "0 0 auto",
     [`${theme.mixins.l}`]: {
-      width: "100vw"
+      width: "100vw",
+      height: "auto"
     }
   },
   main: {

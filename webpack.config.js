@@ -13,7 +13,13 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.svg$/,
+        use: {
+          loader: "svg-inline-loader"
+        }
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
         use: {
           loader: "file-loader"
         }

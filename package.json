@@ -40,6 +40,7 @@
     "node-sass": "^4.9.3",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
+    "react-devicon": "^0.1.9",
     "react-dom": "^16.4.1",
     "react-jss": "^8.6.1",
     "react-markdown": "^4.0.3",
@@ -47,6 +48,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "styled-components": "^4.0.2",
-    "styled-icons": "^3.1.0"
+    "styled-icons": "^3.1.0",
+    "svg-inline-loader": "^0.8.0"
   }
 }
