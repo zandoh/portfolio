@@ -1,6 +1,5 @@
 const styles = theme => ({
   sidebar: {
-    background: theme.palette.light,
     width: "225px",
     maxHeight: "100vh",
     padding: "1rem",

@@ -16,10 +16,6 @@ function AppLink(props) {
 }
 
 class Sidebar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
   render = () => {
     const { styling, classes } = this.props;
     const width = 50;

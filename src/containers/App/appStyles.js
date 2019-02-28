@@ -1,15 +1,4 @@
 const styles = theme => ({
-  "@global": {
-    body: {
-      margin: 0,
-      maxWidth: "100vw",
-      overflow: "hidden",
-      background: "red",
-      [`${theme.mixins.l}`]: {
-        overflow: "auto"
-      }
-    }
-  },
   app: {
     display: "flex",
     flexDirection: "row",

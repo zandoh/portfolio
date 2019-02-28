@@ -11,7 +11,8 @@ class App extends Component {
     super(props);
     this.state = {
       theme: this.props.theme,
-      palette: darkTheme
+      palette: darkTheme,
+      checked: false
     };
   }
 
