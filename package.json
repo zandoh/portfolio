@@ -24,6 +24,7 @@
   ],
   "devDependencies": {
     "react-jss": "^8.6.1",
-    "react-switch": "^4.1.0"
+    "react-switch": "^4.1.0",
+    "react-typist": "^2.0.5"
   }
 }

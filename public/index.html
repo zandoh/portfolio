@@ -36,6 +36,35 @@
     <title>Zac Clark</title>
   </head>
   <body>
+    <!--[if lt IE 10]>
+      <p>
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+        your experience.
+      </p>
+    <![endif]-->
+    <style>
+      .Typist .Cursor {
+        display: inline-block;
+        margin-left: 2px;
+      }
+      .Typist .Cursor--blinking {
+        opacity: 1;
+        animation: blink 1s linear infinite;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="app"></div>
     <!--
