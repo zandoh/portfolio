@@ -3,7 +3,8 @@ const styles = theme => ({
     display: "flex",
     flexFlow: "row wrap",
     alignItems: "center",
-    paddingTop: "50px"
+    paddingTop: "50px",
+    justifyContent: "center"
   },
   img: {
     filter: "grayscale(100%)",
