@@ -37,7 +37,7 @@ class Main extends Component {
         <h2>Projects</h2>
         <div className={classes.typistContainer}>
           Developing projects pertaining to{" "}
-          <Typist className={classes.typist}>{typistList}</Typist>
+          <Typist className={`${classes.typist} dark`}>{typistList}</Typist>
         </div>
       </main>
     );

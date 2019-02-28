@@ -1,6 +1,6 @@
 const styles = theme => ({
   main: {
-    color: "red"
+    color: theme.palette.light
   },
   typistContainer: {
     display: "inline-flex",

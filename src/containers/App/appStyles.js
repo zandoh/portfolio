@@ -2,7 +2,9 @@ const styles = theme => ({
   "@global": {
     body: {
       margin: 0,
+      maxWidth: "100vw",
       overflow: "hidden",
+      background: "red",
       [`${theme.mixins.l}`]: {
         overflow: "auto"
       }
@@ -15,30 +17,6 @@ const styles = theme => ({
     height: "100vh",
     [`${theme.mixins.l}`]: {
       flexDirection: "column"
-    }
-  },
-  sidebar: {
-    background: theme.dark.light,
-    width: "225px",
-    maxHeight: "100vh",
-    height: "100vh",
-    padding: "1rem",
-    flex: "0 0 auto",
-    [`${theme.mixins.l}`]: {
-      width: "100vw",
-      height: "auto"
-    }
-  },
-  main: {
-    background: theme.dark.dark,
-    maxWidth: "1200px",
-    minHeight: "100vh",
-    padding: "1rem",
-    flex: "1 1 auto",
-    overflow: "auto",
-    [`${theme.mixins.l}`]: {
-      overflow: "unset",
-      minHeight: "unset"
     }
   }
 });

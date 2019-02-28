@@ -4,7 +4,8 @@ const styles = theme => ({
     flexFlow: "row wrap",
     alignItems: "center",
     paddingTop: "50px",
-    justifyContent: "center"
+    justifyContent: "center",
+    color: theme.palette.dark
   },
   img: {
     filter: "grayscale(100%)",
