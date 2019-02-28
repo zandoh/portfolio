@@ -1,11 +1,20 @@
 const styles = theme => ({
   sidebar: {
+    background: theme.palette.light,
+    width: "225px",
+    maxHeight: "100vh",
+    padding: "1rem",
+    flex: "0 0 auto",
     display: "flex",
     flexFlow: "row wrap",
     alignItems: "center",
     paddingTop: "50px",
     justifyContent: "center",
-    color: theme.palette.dark
+    color: theme.palette.dark,
+    [`${theme.mixins.l}`]: {
+      width: "100vw",
+      height: "auto"
+    }
   },
   img: {
     filter: "grayscale(100%)",

@@ -1,7 +1,7 @@
 export default {
-  light: "purple",
-  main: "purple",
-  dark: "purple",
+  light: "#828489",
+  main: "#7D7C7A",
+  dark: "#3F4045",
   font: "",
   bodyMain: "",
   bodySvg: ""
