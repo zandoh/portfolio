@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import injectSheet from "react-jss";
 import styles from "./mainStyles";
-import Typist from "react-typist";
+import { Switch, Route } from "react-router-dom";
+import List from "../List/List";
+import Detail from "../Detail/Detail";
 
 class Main extends Component {
   constructor(props) {
@@ -11,34 +13,15 @@ class Main extends Component {
 
   render = () => {
     const { styling, classes } = this.props;
-    const typistWords = [
-      "Front-End",
-      "Back-End",
-      "Internet of Things",
-      "Web Applications"
-    ];
-    const typistList = typistWords.map((word, index) => {
-      return index < typistWords.length - 1 ? (
-        <span key={`typist-item-${index}`}>
-          {word}
-          <Typist.Backspace
-            count={word.length}
-            delay={500}
-            style={{ marginLeft: "1px" }}
-          />
-        </span>
-      ) : (
-        <span key={`typist-item-${index}`}>{word}</span>
-      );
-    });
-
     return (
       <main className={`${styling} ${classes.main}`}>
-        <h2>Projects</h2>
-        <div className={classes.typistContainer}>
-          Developing projects pertaining to{" "}
-          <Typist className={`${classes.typist} dark`}>{typistList}</Typist>
-        </div>
+        <Switch>
+          <Route exact path="/" component={List} />
+          <Route path="/wow" component={Detail} project="test" />
+          <Route path="/labs" component={Detail} project="test" />
+          <Route path="/quotr" component={Detail} project="test" />
+          <Route component={List} />
+        </Switch>
       </main>
     );
   };

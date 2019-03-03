@@ -25,14 +25,6 @@ const styles = theme => ({
       overflow: "unset",
       minHeight: "unset"
     }
-  },
-  typistContainer: {
-    display: "inline-flex",
-    fontSize: "20px"
-  },
-  typist: {
-    marginLeft: "4px",
-    color: "blue"
   }
 });
 

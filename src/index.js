@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./containers/App/App.js";
 import { ThemeProvider } from "react-jss";
+import { BrowserRouter } from "react-router-dom";
 import theme from "./rootStyles";
 
 // getting and setting theme value from local storage
@@ -20,8 +21,10 @@ window.__getTheme = function() {
 };
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <App />
-  </ThemeProvider>,
+  <BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
+  </BrowserRouter>,
   document.getElementById("app")
 );
