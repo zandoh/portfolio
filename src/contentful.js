@@ -13,7 +13,6 @@ const ContentfulClient = {
         host: "cdn.contentful.com"
       });
     }
-    console.log("this.instance ", this.client);
     return this.client;
   }
 };

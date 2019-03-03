@@ -59,8 +59,14 @@ class List extends Component {
         </div>
         {this.state.projects.map((project, index) => {
           return (
-            <Link to={`${project.fields.link}`} key={`link-${index}`}>
-              <Detail fields={project.fields} key={`detail-${index}`} />
+            <Link
+              to={{
+                pathname: `${project.fields.link}`,
+                state: { fields: project.fields }
+              }}
+              key={`link-${index}`}
+            >
+              {project.fields.title}
             </Link>
           );
         })}
