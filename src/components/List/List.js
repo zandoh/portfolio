@@ -7,11 +7,13 @@ import injectSheet from "react-jss";
 import styles from "./listStyles";
 
 class List extends Component {
+  typistList = null;
   constructor(props) {
     super(props);
     this.state = {
       projects: []
     };
+    this.setTypistList();
   }
 
   async componentWillMount() {
@@ -21,15 +23,14 @@ class List extends Component {
     });
   }
 
-  render() {
-    const { classes } = this.props;
+  setTypistList = () => {
     const typistWords = [
       "Front-End",
       "Back-End",
       "Internet of Things",
       "Web Applications"
     ];
-    const typistList = typistWords.map((word, index) => {
+    this.typistList = typistWords.map((word, index) => {
       return index < typistWords.length - 1 ? (
         <span key={`typist-item-${index}`}>
           {word}
@@ -43,13 +44,18 @@ class List extends Component {
         <span key={`typist-item-${index}`}>{word}</span>
       );
     });
-    console.log("projects ", this.state.projects);
+  };
+
+  render() {
+    const { classes } = this.props;
     return (
       <React.Fragment>
         <h2>Projects</h2>
         <div className={classes.typistContainer}>
           Developing projects pertaining to{" "}
-          <Typist className={`${classes.typist} dark`}>{typistList}</Typist>
+          <Typist className={`${classes.typist} dark`}>
+            {this.typistList}
+          </Typist>
         </div>
         {this.state.projects.map((project, index) => {
           return (
