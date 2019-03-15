@@ -11,5 +11,5 @@ const styles = (theme: AppTheme) => ({
   }
 });
 
-export type Styles = typeof styles;
+export type ListStyles = { typistContainer: any; typist: any };
 export default styles;

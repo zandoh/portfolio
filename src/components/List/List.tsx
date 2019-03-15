@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import * as Typed from "react-typed";
+import { Typed } from "react-typed";
 import ContentfulClient from "../../contentful";
 import withStyles from "react-jss";
-import styles from "./listStyles";
+import styles, { ListStyles } from "./listStyles";
 import { Project } from "../../models";
 
 interface ListProps {
   projects: Project[];
-  classes: any; // type this
+  classes: ListStyles;
 }
 
 interface ListState {
@@ -46,7 +46,7 @@ class List extends Component<ListProps, ListState> {
         <h2>Projects</h2>
         <div className={classes.typistContainer}>
           Developing projects pertaining to{" "}
-          {/* <Typed
+          <Typed
             className={`${classes.typist} dark`}
             strings={this.typistWords}
             typeSpeed={40}
@@ -55,7 +55,7 @@ class List extends Component<ListProps, ListState> {
             loop
           >
             <span />
-          </Typed> */}
+          </Typed>
         </div>
         {this.state.projects.map((project: any, index: number) => {
           return (
