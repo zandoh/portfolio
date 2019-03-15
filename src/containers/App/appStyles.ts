@@ -1,4 +1,6 @@
-const styles = theme => ({
+import { AppTheme } from "../../rootStyles";
+
+const styles = (theme: AppTheme) => ({
   app: {
     display: "flex",
     flexDirection: "row",
@@ -10,4 +12,5 @@ const styles = theme => ({
   }
 });
 
+export type AppClasses = { app: any };
 export default styles;

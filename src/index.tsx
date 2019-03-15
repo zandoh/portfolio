@@ -1,21 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./containers/App/App.js";
+import App from "./containers/App/App";
 import { ThemeProvider } from "react-jss";
 import { BrowserRouter } from "react-router-dom";
 import theme from "./rootStyles";
+import * as serviceWorker from "./serviceWorker";
+
+declare global {
+  interface Window {
+    __getTheme(): string;
+    __setTheme(themePref: string): void;
+  }
+}
 
 // getting and setting theme value from local storage
 // we bind to window object so react can have access
-window.__setTheme = function(themePref) {
+window.__setTheme = function(themePref: string) {
   try {
     localStorage.setItem("theme", themePref);
   } catch (err) {}
 };
-window.__getTheme = function() {
+
+window.__getTheme = function(): string {
   var themePref = "dark";
   try {
-    themePref = localStorage.getItem("theme");
+    (themePref as any) = localStorage.getItem("theme");
   } catch (err) {}
   return themePref;
 };
@@ -28,3 +37,5 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("app")
 );
+
+serviceWorker.register();

@@ -2,17 +2,31 @@ import React, { Component } from "react";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Main from "../../components/Main/Main";
 import injectSheet, { ThemeProvider } from "react-jss";
-import styles from "./appStyles";
+import styles, { AppClasses } from "./appStyles";
 import darkTheme from "../../themeDark";
 import lightTheme from "../../themeLight";
+import { AppTheme, AppPalette } from "../../rootStyles";
 
-class App extends Component {
-  constructor(props) {
+interface AppProps {
+  theme: AppTheme;
+  classes: AppClasses;
+}
+
+interface AppState {
+  theme: AppTheme;
+  palette: AppPalette;
+  checked: boolean;
+  themePref: string;
+}
+
+class App extends Component<AppProps, AppState> {
+  constructor(props: AppProps) {
     super(props);
     this.state = {
       theme: this.props.theme,
       palette: darkTheme,
-      checked: false
+      checked: false,
+      themePref: "dark"
     };
   }
 
@@ -24,7 +38,7 @@ class App extends Component {
     });
   }
 
-  changeTheme = checked => {
+  changeTheme = (checked: boolean) => {
     const themePref = checked ? "light" : "dark";
     const palette = themePref === "light" ? lightTheme : darkTheme;
     this.setState({

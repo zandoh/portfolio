@@ -1,18 +1,28 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Typed from "react-typed";
+import * as Typed from "react-typed";
 import ContentfulClient from "../../contentful";
-import injectSheet from "react-jss";
+import withStyles from "react-jss";
 import styles from "./listStyles";
+import { Project } from "../../models";
 
-class List extends Component {
-  typistWords = [
+interface ListProps {
+  projects: Project[];
+  classes: any; // type this
+}
+
+interface ListState {
+  projects: Project[];
+}
+
+class List extends Component<ListProps, ListState> {
+  typistWords: string[] = [
     "Front-End",
     "Back-End",
     "Internet of Things",
     "Web Applications"
   ];
-  constructor(props) {
+  constructor(props: ListProps) {
     super(props);
     this.state = {
       projects: []
@@ -20,9 +30,12 @@ class List extends Component {
   }
 
   async componentWillMount() {
-    const projects = await ContentfulClient.instance.getEntries();
+    const projects = await ContentfulClient.getInstance().getEntries();
+    const projectArr: Project[] = projects.items.map(project => {
+      return project.fields as Project;
+    });
     this.setState({
-      projects: projects.items
+      projects: projectArr
     });
   }
 
@@ -33,7 +46,7 @@ class List extends Component {
         <h2>Projects</h2>
         <div className={classes.typistContainer}>
           Developing projects pertaining to{" "}
-          <Typed
+          {/* <Typed
             className={`${classes.typist} dark`}
             strings={this.typistWords}
             typeSpeed={40}
@@ -42,18 +55,18 @@ class List extends Component {
             loop
           >
             <span />
-          </Typed>
+          </Typed> */}
         </div>
-        {this.state.projects.map((project, index) => {
+        {this.state.projects.map((project: any, index: number) => {
           return (
             <Link
               to={{
-                pathname: `${project.fields.link}`,
-                state: { fields: project.fields }
+                pathname: `${project.link}`,
+                state: { fields: project }
               }}
               key={`link-${index}`}
             >
-              {project.fields.title}
+              {project.title}
             </Link>
           );
         })}
@@ -62,4 +75,4 @@ class List extends Component {
   }
 }
 
-export default injectSheet(styles)(List);
+export default withStyles(styles)(List);

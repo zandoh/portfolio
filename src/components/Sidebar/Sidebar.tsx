@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 import avatar from "../../assets/avatar.jpg";
 import injectSheet from "react-jss";
-import styles from "./sidebarStyles";
+import styles, { SidebarClasses } from "./sidebarStyles";
 import { ReactComponent as IconGithub } from "../../assets/github.svg";
 import { ReactComponent as IconLinkedIn } from "../../assets/linkedin.svg";
 import { ReactComponent as IconTwitter } from "../../assets/twitter.svg";
 import Switch from "react-switch";
 
-function AppLink(props) {
+interface SidebarProps {
+  classes: SidebarClasses;
+  checked: boolean;
+  changeTheme: (checked: boolean) => void;
+}
+
+function AppLink<T>(props: { link: string; component: T }) {
   return (
     <a href={props.link} target="_blank" rel="noopener noreferrer">
       {props.component}
@@ -15,24 +21,24 @@ function AppLink(props) {
   );
 }
 
-class Sidebar extends Component {
-  render = () => {
-    const { styling, classes } = this.props;
-    const width = 50;
-    const height = 50;
+class Sidebar extends Component<SidebarProps, {}> {
+  render() {
+    const { classes } = this.props;
+    const width: number = 50;
+    const height: number = 50;
     const githubLink = "https://github.com/zandoh";
     const linkedinLink = "https://www.linkedin.com/in/zrclark/";
     const twitterLink = "https://twitter.com/Zandoh_";
     const svgStyle = {
       height: "20px",
       width: "20px",
-      position: "absolute",
+      position: "absolute" as "absolute",
       top: "6px",
       right: "4px"
     };
 
     return (
-      <aside className={`${styling} ${classes.sidebar}`}>
+      <aside className={`${classes.sidebar}`}>
         <img
           className={classes.img}
           src={avatar}
@@ -40,8 +46,8 @@ class Sidebar extends Component {
         />
         <h1 className={classes.title}>Zac Clark</h1>
         <p>
-          Agile developer with a passion for software design, installation,
-          testing and maintenance of web applications. Advocating for businesses
+          Agile developer with a passion for software architecture, development,
+          testing and maintenance of web applications. Advocating for processes
           to be more efficient and provide a better service through software
         </p>
         <Switch
@@ -77,7 +83,7 @@ class Sidebar extends Component {
         </div>
       </aside>
     );
-  };
+  }
 }
 
 export default injectSheet(styles)(Sidebar);

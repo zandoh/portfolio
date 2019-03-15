@@ -4,7 +4,16 @@ const theme = {
       roboto: ["Roboto", "Helvetica", "Arial", "sans-serif"]
     }
   },
-  palette: {},
+  palette: {
+    light: "",
+    main: "",
+    dark: "",
+    fontLight: "",
+    fontMain: "",
+    fontDark: "",
+    bodyMain: "",
+    bodySvg: ""
+  },
   mixins: {
     xl: "@media all and (max-width: 1199px)",
     l: "@media all and (max-width: 991px)",
@@ -14,4 +23,6 @@ const theme = {
   }
 };
 
+export type AppTheme = typeof theme;
+export type AppPalette = typeof theme.palette;
 export default theme;

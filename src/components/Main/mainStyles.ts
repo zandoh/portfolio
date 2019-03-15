@@ -1,4 +1,6 @@
-const styles = theme => ({
+import { AppTheme } from "../../rootStyles";
+
+const styles = (theme: AppTheme) => ({
   "@global": {
     body: {
       margin: 0,
@@ -28,4 +30,5 @@ const styles = theme => ({
   }
 });
 
+export type MainClasses = { main: any };
 export default styles;

@@ -1,4 +1,6 @@
-const styles = theme => ({
+import { AppTheme } from "../../rootStyles";
+
+const styles = (theme: AppTheme) => ({
   sidebar: {
     width: "225px",
     maxHeight: "100vh",
@@ -31,5 +33,10 @@ const styles = theme => ({
     width: "100%"
   }
 });
-
+export type SidebarClasses = {
+  sidebar: any;
+  img: any;
+  title: any;
+  iconContainer: any;
+};
 export default styles;
