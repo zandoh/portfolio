@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Typed } from "react-typed";
+import Typed from "react-typed";
 import ContentfulClient from "../../contentful";
 import withStyles from "react-jss";
 import styles, { ListStyles } from "./listStyles";
@@ -41,21 +41,25 @@ class List extends Component<ListProps, ListState> {
 
   render() {
     const { classes } = this.props;
+    const typed = (
+      //@ts-ignore
+      <Typed
+        className={`${classes.typist} dark`}
+        strings={this.typistWords}
+        typeSpeed={40}
+        backSpeed={50}
+        smartBackspace
+        loop
+      >
+        <span />
+      </Typed>
+    );
+
     return (
       <React.Fragment>
         <h2>Projects</h2>
         <div className={classes.typistContainer}>
-          Developing projects pertaining to{" "}
-          <Typed
-            className={`${classes.typist} dark`}
-            strings={this.typistWords}
-            typeSpeed={40}
-            backSpeed={50}
-            smartBackspace
-            loop
-          >
-            <span />
-          </Typed>
+          Developing projects pertaining to {typed}
         </div>
         {this.state.projects.map((project: any, index: number) => {
           return (
