@@ -7213,9 +7213,9 @@ react-switch@^4.1.0:
   dependencies:
     prop-types "^15.6.2"
 
-react-typed@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-typed/-/react-typed-1.1.0.tgz#448f61452bd138d495d17e4fc83068d05156d03b"
+react-typed@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-typed/-/react-typed-1.1.1.tgz#4324c99990e957c66554be97b98b247a0782f8e8"
   dependencies:
     prop-types "^15.6.0"
     styled-components "^4.0.3"

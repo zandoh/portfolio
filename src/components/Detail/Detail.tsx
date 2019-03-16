@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { RouteComponentProps } from "react-router-dom";
-import { Project } from "../../models";
+import { IProject, ICommitFromGithub } from "../../models";
+import Commit from "../Commit/Commit";
 
 interface DetailProps extends RouteComponentProps {}
 
 interface DetailState {
-  details: Project;
+  details: IProject;
+  githubHistoryLoaded: boolean;
+  githubHistory: ICommitFromGithub[];
+  githubError: boolean;
 }
 
 class Detail extends Component<DetailProps, DetailState> {
@@ -17,10 +21,13 @@ class Detail extends Component<DetailProps, DetailState> {
         link: "",
         techStack: [],
         title: "",
-        url: ""
-      }
+        url: "",
+        repoName: ""
+      },
+      githubHistoryLoaded: false,
+      githubHistory: [],
+      githubError: false
     };
-    // `https://api.github.com/repos/zandoh/${repoName}/commits`
   }
 
   static getDerivedStateFromProps(props: DetailProps, state: DetailState) {
@@ -32,9 +39,63 @@ class Detail extends Component<DetailProps, DetailState> {
     return null;
   }
 
+  componentDidMount() {
+    const url = `https://api.github.com/repos/zandoh/${
+      this.state.details.repoName
+    }/commits`;
+    fetch(url)
+      .then(res => res.json())
+      .then(
+        result => {
+          this.setState({
+            githubHistoryLoaded: true,
+            githubHistory: result
+          });
+        },
+        error => {
+          this.setState({
+            githubHistoryLoaded: true,
+            githubError: true
+          });
+        }
+      );
+  }
+
   render() {
     const { title } = this.state.details;
-    return <h1>hiiii {title}</h1>;
+    let githubContent: React.ReactNode;
+    if (this.state.githubError) {
+      githubContent = (
+        <React.Fragment>
+          <div>Error: Couldn't communicate with GitHub</div>
+        </React.Fragment>
+      );
+    } else if (!this.state.githubHistoryLoaded) {
+      githubContent = (
+        <React.Fragment>
+          <div>Loading...</div>
+        </React.Fragment>
+      );
+    } else {
+      githubContent = this.state.githubHistory.map(
+        (commit: ICommitFromGithub, index: number) => {
+          return (
+            <Commit
+              key={`commit-${index}`}
+              commit={commit.commit}
+              committerProfile={commit.committer}
+              url={commit.url}
+            />
+          );
+        }
+      );
+    }
+    return (
+      <React.Fragment>
+        <h1>{title}</h1>
+        {githubContent}
+      </React.Fragment>
+    );
   }
 }
 

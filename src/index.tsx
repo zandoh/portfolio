@@ -39,3 +39,13 @@ ReactDOM.render(
 );
 
 serviceWorker.register();
+
+const message = "Let's Chat!";
+const styles = [
+  "background: linear-gradient(#348F50, #56B4D3)",
+  "color: #FFF",
+  "font-size: 70px",
+  "line-height: 200px"
+].join(";");
+
+console.log(`%c ${message}`, styles);

@@ -4,15 +4,15 @@ import Typed from "react-typed";
 import ContentfulClient from "../../contentful";
 import withStyles from "react-jss";
 import styles, { ListStyles } from "./listStyles";
-import { Project } from "../../models";
+import { IProject } from "../../models";
 
 interface ListProps {
-  projects: Project[];
+  projects: IProject[];
   classes: ListStyles;
 }
 
 interface ListState {
-  projects: Project[];
+  projects: IProject[];
 }
 
 class List extends Component<ListProps, ListState> {
@@ -31,8 +31,8 @@ class List extends Component<ListProps, ListState> {
 
   async componentWillMount() {
     const projects = await ContentfulClient.getInstance().getEntries();
-    const projectArr: Project[] = projects.items.map(project => {
-      return project.fields as Project;
+    const projectArr: IProject[] = projects.items.map(project => {
+      return project.fields as IProject;
     });
     this.setState({
       projects: projectArr
@@ -42,7 +42,6 @@ class List extends Component<ListProps, ListState> {
   render() {
     const { classes } = this.props;
     const typed = (
-      //@ts-ignore
       <Typed
         className={`${classes.typist} dark`}
         strings={this.typistWords}

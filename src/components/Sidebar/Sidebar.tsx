@@ -6,21 +6,14 @@ import { ReactComponent as IconGithub } from "../../assets/github.svg";
 import { ReactComponent as IconLinkedIn } from "../../assets/linkedin.svg";
 import { ReactComponent as IconTwitter } from "../../assets/twitter.svg";
 import Switch from "react-switch";
+//@ts-ignore
+import { AppLink } from "../Shared/shared"; // fix this
 
 interface SidebarProps {
   classes: SidebarClasses;
   checked: boolean;
   changeTheme: (checked: boolean) => void;
 }
-
-function AppLink<T>(props: { link: string; component: T }) {
-  return (
-    <a href={props.link} target="_blank" rel="noopener noreferrer">
-      {props.component}
-    </a>
-  );
-}
-
 class Sidebar extends Component<SidebarProps, {}> {
   render() {
     const { classes } = this.props;

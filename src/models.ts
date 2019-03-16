@@ -1,18 +1,38 @@
-export interface Project {
-  description: string;
+export interface IProject {
+  description: string; // project description
   image?: {
     fields: {
-      title: string;
+      title: string; // image caption
     };
     file: {
-      url: string;
+      url: string; // image url
       details: {
-        fileName: string;
+        fileName: string; // image name, for alt text
       };
     };
   };
-  link: string;
-  techStack: string[];
-  title: string;
-  url: string;
+  link: string; // react-router link
+  techStack: string[]; // technologies used to build project
+  title: string; // project title
+  url: string; // browser url
+  repoName: string; // github repo name
+}
+
+export interface IGithubUser {
+  avatar_url: string; // image link
+  html_url: string; // profile link
+  login: string; // username
+}
+export interface ICommit {
+  committer: {
+    name: string; // github users display name
+    date: string; // date in UTC
+  };
+  message: string;
+}
+
+export interface ICommitFromGithub {
+  commit: ICommit;
+  committer: IGithubUser;
+  url: string; // link to github for this commit
 }
