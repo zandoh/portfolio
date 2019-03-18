@@ -1,7 +1,7 @@
 const theme = {
   typeography: {
     fontStack: {
-      roboto: ["Roboto", "Helvetica", "Arial", "sans-serif"]
+      roboto: `"Roboto", "Helvetica", "Arial", "sans-serif"`
     }
   },
   palette: {

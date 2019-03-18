@@ -60,19 +60,22 @@ class List extends Component<ListProps, ListState> {
         <div className={classes.typistContainer}>
           Developing projects pertaining to {typed}
         </div>
-        {this.state.projects.map((project: any, index: number) => {
-          return (
-            <Link
-              to={{
-                pathname: `${project.link}`,
-                state: { fields: project }
-              }}
-              key={`link-${index}`}
-            >
-              {project.title}
-            </Link>
-          );
-        })}
+        <div className={classes.projectContainer}>
+          {this.state.projects.map((project: any, index: number) => {
+            return (
+              <Link
+                to={{
+                  pathname: `${project.link}`,
+                  state: { fields: project }
+                }}
+                key={`link-${index}`}
+                className={classes.project}
+              >
+                {project.title}
+              </Link>
+            );
+          })}
+        </div>
       </React.Fragment>
     );
   }

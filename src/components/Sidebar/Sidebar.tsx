@@ -38,10 +38,9 @@ class Sidebar extends Component<SidebarProps, {}> {
           alt="self portrait of Zac Clark"
         />
         <h1 className={classes.title}>Zac Clark</h1>
-        <p>
+        <p className={classes.summary}>
           Agile developer with a passion for software architecture, development,
-          testing and maintenance of web applications. Advocating for processes
-          to be more efficient and provide a better service through software
+          testing and maintenance of web applications.
         </p>
         <Switch
           onChange={this.props.changeTheme}
