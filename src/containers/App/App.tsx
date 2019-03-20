@@ -3,9 +3,9 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import Main from "../../components/Main/Main";
 import injectSheet, { ThemeProvider } from "react-jss";
 import styles, { AppClasses } from "./appStyles";
-import darkTheme from "../../themeDark";
-import lightTheme from "../../themeLight";
-import { AppTheme, AppPalette } from "../../rootStyles";
+import darkTheme, { ThemePaletteDark } from "../../themeDark";
+import lightTheme, { ThemePaletteLight } from "../../themeLight";
+import { AppTheme } from "../../rootStyles";
 
 interface AppProps {
   theme: AppTheme;
@@ -14,7 +14,7 @@ interface AppProps {
 
 interface AppState {
   theme: AppTheme;
-  palette: AppPalette;
+  palette: ThemePaletteDark | ThemePaletteLight;
   checked: boolean;
   themePref: string;
 }

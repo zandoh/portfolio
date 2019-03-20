@@ -8,15 +8,18 @@ import { ReactComponent as IconTwitter } from "../../assets/twitter.svg";
 import Switch from "react-switch";
 //@ts-ignore
 import { AppLink } from "../Shared/shared"; // fix this
+import { AppTheme } from "../../rootStyles";
 
 interface SidebarProps {
   classes: SidebarClasses;
   checked: boolean;
   changeTheme: (checked: boolean) => void;
+  theme: AppTheme;
 }
 class Sidebar extends Component<SidebarProps, {}> {
   render() {
-    const { classes } = this.props;
+    const { classes, theme } = this.props;
+    const fontColor = theme.palette.dark;
     const width: number = 50;
     const height: number = 50;
     const githubLink = "https://github.com/zandoh";
@@ -62,15 +65,21 @@ class Sidebar extends Component<SidebarProps, {}> {
         <div className={classes.iconContainer}>
           <AppLink
             link={githubLink}
-            component={<IconGithub width={width} height={height} />}
+            component={
+              <IconGithub width={width} height={height} fill={fontColor} />
+            }
           />
           <AppLink
             link={linkedinLink}
-            component={<IconLinkedIn width={width} height={height} />}
+            component={
+              <IconLinkedIn width={width} height={height} fill={fontColor} />
+            }
           />
           <AppLink
             link={twitterLink}
-            component={<IconTwitter width={width} height={height} />}
+            component={
+              <IconTwitter width={width} height={height} fill={fontColor} />
+            }
           />
         </div>
       </aside>

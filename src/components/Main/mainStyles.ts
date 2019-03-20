@@ -20,9 +20,10 @@ const styles = (theme: AppTheme) => ({
     color: theme.palette.light,
     maxWidth: "1200px",
     minHeight: "100vh",
-    padding: "1rem",
+    padding: "175px 16px 0 16px",
     flex: "1 1 auto",
     overflow: "auto",
+    boxSizing: "border-box",
     [`${theme.mixins.l}`]: {
       overflow: "unset",
       minHeight: "unset"

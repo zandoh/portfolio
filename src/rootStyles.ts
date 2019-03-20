@@ -1,18 +1,11 @@
+import { ThemePaletteDark } from "./themeDark";
+import { ThemePaletteLight } from "./themeLight";
+
 const theme = {
   typeography: {
     fontStack: {
       roboto: `"Roboto", "Helvetica", "Arial", "sans-serif"`
     }
-  },
-  palette: {
-    light: "",
-    main: "",
-    dark: "",
-    fontLight: "",
-    fontMain: "",
-    fontDark: "",
-    bodyMain: "",
-    bodySvg: ""
   },
   mixins: {
     xl: "@media all and (max-width: 1199px)",
@@ -23,6 +16,9 @@ const theme = {
   }
 };
 
-export type AppTheme = typeof theme;
-export type AppPalette = typeof theme.palette;
+export type AppTheme = {
+  typeography: typeof theme.typeography;
+  palette: ThemePaletteDark | ThemePaletteLight;
+  mixins: typeof theme.mixins;
+};
 export default theme;

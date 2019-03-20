@@ -1,4 +1,4 @@
-export default {
+const light = {
   light: "#FCFFF9",
   main: "#F4F9E9",
   dark: "#E3E5E0",
@@ -6,5 +6,12 @@ export default {
   fontMain: "",
   fontDark: "",
   bodyMain: "#FFF",
-  bodySvg: "#000"
+  bodySvg: "#000",
+  contrastLight: "#828489",
+  contrastMain: "#7D7C7A",
+  contrastDark: "#3F4045"
 };
+
+export default light;
+
+export type ThemePaletteLight = typeof light;

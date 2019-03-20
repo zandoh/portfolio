@@ -56,7 +56,7 @@ class List extends Component<ListProps, ListState> {
 
     return (
       <React.Fragment>
-        <h2>Projects</h2>
+        <h2 className={classes.title}>Projects</h2>
         <div className={classes.typistContainer}>
           Developing projects pertaining to {typed}
         </div>
@@ -71,7 +71,7 @@ class List extends Component<ListProps, ListState> {
                 key={`link-${index}`}
                 className={classes.project}
               >
-                {project.title}
+                <h3>{project.title}</h3>
               </Link>
             );
           })}

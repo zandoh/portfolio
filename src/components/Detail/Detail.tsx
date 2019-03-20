@@ -1,9 +1,14 @@
 import React, { Component } from "react";
-import { RouteComponentProps } from "react-router-dom";
+import { RouteComponentProps, withRouter } from "react-router-dom";
 import { IProject, ICommitFromGithub } from "../../models";
 import Commit from "../Commit/Commit";
+import withStyles from "react-jss";
+import styles, { DetailStyles } from "./detailStyles";
+import { ReactComponent as IconX } from "../../assets/x.svg";
 
-interface DetailProps extends RouteComponentProps {}
+interface DetailProps extends RouteComponentProps {
+  classes: DetailStyles;
+}
 
 interface DetailState {
   details: IProject;
@@ -61,8 +66,13 @@ class Detail extends Component<DetailProps, DetailState> {
       );
   }
 
+  navigateBack = () => {
+    this.props.history.push("/");
+  };
+
   render() {
     const { title } = this.state.details;
+    const { classes } = this.props;
     let githubContent: React.ReactNode;
     if (this.state.githubError) {
       githubContent = (
@@ -91,12 +101,13 @@ class Detail extends Component<DetailProps, DetailState> {
       );
     }
     return (
-      <React.Fragment>
+      <div className={classes.detailContainer}>
+        <IconX height={"25px"} width={"25px"} onClick={this.navigateBack} />
         <h1>{title}</h1>
         {githubContent}
-      </React.Fragment>
+      </div>
     );
   }
 }
 
-export default Detail;
+export default withRouter(withStyles(styles)(Detail));
