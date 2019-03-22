@@ -50,3 +50,4 @@ const rainbow = [
 ].join(";");
 
 console.log(`%c ${message}`, rainbow);
+console.log("https://www.linkedin.com/in/zrclark/");
