@@ -61,7 +61,7 @@ class List extends Component<ListProps, ListState> {
           Developing projects pertaining to {typed}
         </div>
         <div className={classes.projectContainer}>
-          {this.state.projects.map((project: any, index: number) => {
+          {this.state.projects.map((project: IProject, index: number) => {
             return (
               <Link
                 to={{
@@ -71,7 +71,8 @@ class List extends Component<ListProps, ListState> {
                 key={`link-${index}`}
                 className={classes.project}
               >
-                <h3>{project.title}</h3>
+                <h3 className={classes.projectTitle}>{project.title}</h3>
+                <span>{project.descriptionShort}</span>
               </Link>
             );
           })}

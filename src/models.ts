@@ -1,5 +1,6 @@
 export interface IProject {
   description: string; // project description
+  descriptionShort?: string; // project short description
   image?: {
     fields: {
       title: string; // image caption
