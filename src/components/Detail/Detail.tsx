@@ -5,6 +5,8 @@ import Commit from "../Commit/Commit";
 import withStyles from "react-jss";
 import styles, { DetailStyles } from "./detailStyles";
 import { ReactComponent as IconX } from "../../assets/x.svg";
+// @ts-ignore
+import ReactMarkdown from "react-markdown"; // no types
 
 interface DetailProps extends RouteComponentProps {
   classes: DetailStyles;
@@ -71,7 +73,7 @@ class Detail extends Component<DetailProps, DetailState> {
   };
 
   render() {
-    const { title } = this.state.details;
+    const { title, description, techStack, link } = this.state.details;
     const { classes } = this.props;
     let githubContent: React.ReactNode;
     if (this.state.githubError) {
@@ -102,8 +104,20 @@ class Detail extends Component<DetailProps, DetailState> {
     }
     return (
       <div className={classes.detailContainer}>
-        <IconX height={"25px"} width={"25px"} onClick={this.navigateBack} />
+        <IconX
+          height={"25px"}
+          width={"25px"}
+          color={"black"}
+          onClick={this.navigateBack}
+          className={classes.iconX}
+        />
         <h1>{title}</h1>
+        <ReactMarkdown source={description} escapeHtml={false} />
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          Demo
+        </a>
+        <br />
+        <span>Commit History</span>
         {githubContent}
       </div>
     );
