@@ -113,9 +113,11 @@ class Detail extends Component<DetailProps, DetailState> {
         />
         <h1>{title}</h1>
         <ReactMarkdown source={description} escapeHtml={false} />
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          Demo
-        </a>
+        {url && (
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            Demo
+          </a>
+        )}
         <br />
         <span>Commit History</span>
         {githubContent}

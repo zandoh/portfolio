@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import { ICommit, IGithubUser } from "../../models";
+import withStyles from "react-jss";
+import styles, { CommitStyles } from "./commitStyles";
 
 interface CommitProps {
   commit: ICommit;
   committerProfile: IGithubUser;
   url: string;
+  classes: CommitStyles;
 }
 
 class Commit extends Component<CommitProps, {}> {
@@ -13,24 +16,20 @@ class Commit extends Component<CommitProps, {}> {
   }
 
   render() {
-    const { committerProfile } = this.props;
+    const { committerProfile, classes } = this.props;
     const { message, committer } = this.props.commit;
     return (
-      <React.Fragment>
-        {committer && committer.name !== "=" && (
-          <React.Fragment>
-            <p>User: {committer.name}</p>
-          </React.Fragment>
-        )}
+      <div className={classes.commitContainer}>
         {committerProfile && (
-          <React.Fragment>
-            <img src={committerProfile.avatar_url} />
-          </React.Fragment>
+          <img src={committerProfile.avatar_url} className={classes.img} />
         )}
-        {message && <React.Fragment>Commit message: {message}</React.Fragment>}
-      </React.Fragment>
+        <div className={classes.messageContainer}>
+          {committer && committer.name !== "=" && <span>{committer.name}</span>}
+          {message && <span>{message}</span>}
+        </div>
+      </div>
     );
   }
 }
 
-export default Commit;
+export default withStyles(styles)(Commit);
