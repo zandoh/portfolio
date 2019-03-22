@@ -34,6 +34,11 @@ class List extends Component<ListProps, ListState> {
     const projectArr: IProject[] = projects.items.map(project => {
       return project.fields as IProject;
     });
+    projectArr.sort((a, b) => {
+      let aSort = a.sortOrder === undefined ? -1 : a.sortOrder;
+      let bSort = b.sortOrder === undefined ? -1 : b.sortOrder;
+      return bSort - aSort;
+    });
     this.setState({
       projects: projectArr
     });

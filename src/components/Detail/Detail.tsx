@@ -73,7 +73,7 @@ class Detail extends Component<DetailProps, DetailState> {
   };
 
   render() {
-    const { title, description, techStack, link } = this.state.details;
+    const { title, description, techStack, url } = this.state.details;
     const { classes } = this.props;
     let githubContent: React.ReactNode;
     if (this.state.githubError) {
@@ -113,7 +113,7 @@ class Detail extends Component<DetailProps, DetailState> {
         />
         <h1>{title}</h1>
         <ReactMarkdown source={description} escapeHtml={false} />
-        <a href={link} target="_blank" rel="noopener noreferrer">
+        <a href={url} target="_blank" rel="noopener noreferrer">
           Demo
         </a>
         <br />

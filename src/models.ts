@@ -17,6 +17,7 @@ export interface IProject {
   title: string; // project title
   url: string; // browser url
   repoName: string; // github repo name
+  sortOrder?: number;
 }
 
 export interface IGithubUser {
