@@ -7,6 +7,7 @@ import styles, { DetailStyles } from "./detailStyles";
 import { ReactComponent as IconX } from "../../assets/x.svg";
 // @ts-ignore
 import ReactMarkdown from "react-markdown"; // no types
+import { ReactComponent as IconLoading } from "../../assets/loading.svg";
 
 interface DetailProps extends RouteComponentProps {
   classes: DetailStyles;
@@ -85,7 +86,7 @@ class Detail extends Component<DetailProps, DetailState> {
     } else if (!this.state.githubHistoryLoaded) {
       githubContent = (
         <React.Fragment>
-          <div>Loading...</div>
+          <IconLoading className={classes.iconLoading} />
         </React.Fragment>
       );
     } else {
@@ -119,7 +120,7 @@ class Detail extends Component<DetailProps, DetailState> {
           </a>
         )}
         <br />
-        <span>Commit History</span>
+        <h2>Commit History</h2>
         {githubContent}
       </div>
     );

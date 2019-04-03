@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { ICommit, IGithubUser } from "../../models";
 import withStyles from "react-jss";
 import styles, { CommitStyles } from "./commitStyles";
+//@ts-ignore
+import * as defaultImage from "../../assets/default_github.png";
 
 interface CommitProps {
   commit: ICommit;
@@ -18,11 +20,12 @@ class Commit extends Component<CommitProps, {}> {
   render() {
     const { committerProfile, classes } = this.props;
     const { message, committer } = this.props.commit;
+    const imgSrc = committerProfile
+      ? committerProfile.avatar_url
+      : String(defaultImage);
     return (
       <div className={classes.commitContainer}>
-        {committerProfile && (
-          <img src={committerProfile.avatar_url} className={classes.img} />
-        )}
+        <img src={imgSrc} className={classes.img} />
         <div className={classes.messageContainer}>
           {committer && committer.name !== "=" && <span>{committer.name}</span>}
           {message && <span>{message}</span>}

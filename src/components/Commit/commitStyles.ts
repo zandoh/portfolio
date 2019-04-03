@@ -6,12 +6,14 @@ const styles = (theme: AppTheme) => ({
     height: "100px"
   },
   img: {
-    width: "50px",
-    height: "50px"
+    minWidth: "50px",
+    height: "50px",
+    borderRadius: "25px"
   },
   messageContainer: {
     display: "flex",
-    flexDirection: "column"
+    flexDirection: "column",
+    marginLeft: "16px"
   }
 });
 
