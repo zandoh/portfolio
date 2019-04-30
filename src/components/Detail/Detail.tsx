@@ -20,7 +20,10 @@ interface DetailState {
   githubHistoryLoaded: boolean;
   githubHistory: ICommitFromGithub[];
   githubError: boolean;
+  open: boolean;
 }
+
+const animationTimeout = 450;
 
 class Detail extends Component<DetailProps, DetailState> {
   constructor(props: DetailProps) {
@@ -36,7 +39,8 @@ class Detail extends Component<DetailProps, DetailState> {
       },
       githubHistoryLoaded: false,
       githubHistory: [],
-      githubError: false
+      githubError: false,
+      open: true
     };
   }
 
@@ -62,7 +66,7 @@ class Detail extends Component<DetailProps, DetailState> {
               githubHistoryLoaded: true,
               githubHistory: result
             });
-          }, 500);
+          }, animationTimeout);
         },
         error => {
           this.setState({
@@ -74,7 +78,12 @@ class Detail extends Component<DetailProps, DetailState> {
   }
 
   navigateBack = () => {
-    this.props.history.push("/");
+    this.setState({
+      open: false
+    });
+    setTimeout(() => {
+      this.props.history.push("/");
+    }, animationTimeout);
   };
 
   getJSXByState = (): React.ReactNode => {
@@ -89,6 +98,8 @@ class Detail extends Component<DetailProps, DetailState> {
         <Animated
           animationIn="fadeIn"
           animationOut="fadeOut"
+          animationInDuration={animationTimeout}
+          animationOutDuration={animationTimeout}
           isVisible={!this.state.githubHistoryLoaded}
         >
           <IconLoading className={this.props.classes.iconLoading} />
@@ -99,6 +110,8 @@ class Detail extends Component<DetailProps, DetailState> {
         <Animated
           animationIn="fadeIn"
           animationOut="fadeOut"
+          animationInDuration={animationTimeout}
+          animationOutDuration={animationTimeout}
           isVisible={this.state.githubHistoryLoaded}
         >
           {this.state.githubHistory.map(
@@ -126,7 +139,9 @@ class Detail extends Component<DetailProps, DetailState> {
       <Animated
         animationIn="fadeIn"
         animationOut="fadeOut"
-        isVisible={true}
+        animationInDuration={animationTimeout}
+        animationOutDuration={animationTimeout}
+        isVisible={this.state.open}
         className={classes.detailContainer}
       >
         <IconX
