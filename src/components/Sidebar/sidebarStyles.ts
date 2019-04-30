@@ -11,7 +11,7 @@ const styles = (theme: AppTheme) => ({
     alignItems: "center",
     paddingTop: "50px",
     justifyContent: "center",
-    color: theme.palette.dark,
+    color: theme.palette.fontMain,
     [`${theme.mixins.l}`]: {
       width: "100vw",
       height: "auto"

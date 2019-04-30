@@ -19,7 +19,7 @@ interface SidebarProps {
 class Sidebar extends Component<SidebarProps, {}> {
   render() {
     const { classes, theme } = this.props;
-    const fontColor = theme.palette.dark;
+    const fontColor = theme.palette.fontMain;
     const width: number = 50;
     const height: number = 50;
     const githubLink = "https://github.com/zandoh";
@@ -42,7 +42,7 @@ class Sidebar extends Component<SidebarProps, {}> {
         />
         <h1 className={classes.title}>Zac Clark</h1>
         <p className={classes.summary}>
-          Agile developer with a passion for software architecture, development,
+          Agile developer with a passion for software development, architecture
           testing and maintenance of web applications.
         </p>
         <Switch
