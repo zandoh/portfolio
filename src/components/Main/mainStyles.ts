@@ -17,10 +17,11 @@ const styles = (theme: AppTheme) => ({
     }
   },
   main: {
-    color: theme.palette.light,
+    color: theme.palette.fontMain,
     maxWidth: "1200px",
     minHeight: "100vh",
     padding: "175px 16px 0 16px",
+    margin: "0 auto",
     flex: "1 1 auto",
     overflow: "auto",
     boxSizing: "border-box",

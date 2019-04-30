@@ -7,7 +7,8 @@ const styles = (theme: AppTheme) => ({
     borderTopLeftRadius: "25px",
     borderTopRightRadius: "25px",
     fontFamily: theme.typeography.fontStack.roboto,
-    minHeight: "100vh"
+    minHeight: "100vh",
+    color: theme.palette.main
   },
   iconX: {
     float: "right",

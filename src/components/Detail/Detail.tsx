@@ -8,6 +8,8 @@ import { ReactComponent as IconX } from "../../assets/x.svg";
 // @ts-ignore
 import ReactMarkdown from "react-markdown"; // no types
 import { ReactComponent as IconLoading } from "../../assets/loading.svg";
+import { AppLink } from "../Shared/shared";
+import { Animated } from "react-animated-css";
 
 interface DetailProps extends RouteComponentProps {
   classes: DetailStyles;
@@ -55,10 +57,12 @@ class Detail extends Component<DetailProps, DetailState> {
       .then(res => res.json())
       .then(
         result => {
-          this.setState({
-            githubHistoryLoaded: true,
-            githubHistory: result
-          });
+          setTimeout(() => {
+            this.setState({
+              githubHistoryLoaded: true,
+              githubHistory: result
+            });
+          }, 500);
         },
         error => {
           this.setState({
@@ -73,38 +77,58 @@ class Detail extends Component<DetailProps, DetailState> {
     this.props.history.push("/");
   };
 
-  render() {
-    const { title, description, techStack, url } = this.state.details;
-    const { classes } = this.props;
-    let githubContent: React.ReactNode;
+  getJSXByState = (): React.ReactNode => {
     if (this.state.githubError) {
-      githubContent = (
+      return (
         <React.Fragment>
           <div>Error: Couldn't communicate with GitHub</div>
         </React.Fragment>
       );
     } else if (!this.state.githubHistoryLoaded) {
-      githubContent = (
-        <React.Fragment>
-          <IconLoading className={classes.iconLoading} />
-        </React.Fragment>
+      return (
+        <Animated
+          animationIn="fadeIn"
+          animationOut="fadeOut"
+          isVisible={!this.state.githubHistoryLoaded}
+        >
+          <IconLoading className={this.props.classes.iconLoading} />
+        </Animated>
       );
     } else {
-      githubContent = this.state.githubHistory.map(
-        (commit: ICommitFromGithub, index: number) => {
-          return (
-            <Commit
-              key={`commit-${index}`}
-              commit={commit.commit}
-              committerProfile={commit.committer}
-              url={commit.url}
-            />
-          );
-        }
+      return (
+        <Animated
+          animationIn="fadeIn"
+          animationOut="fadeOut"
+          isVisible={this.state.githubHistoryLoaded}
+        >
+          {this.state.githubHistory.map(
+            (commit: ICommitFromGithub, index: number) => {
+              return (
+                <Commit
+                  key={`commit-${index}`}
+                  commit={commit.commit}
+                  committerProfile={commit.committer}
+                  url={commit.url}
+                />
+              );
+            }
+          )}
+        </Animated>
       );
     }
+  };
+
+  render() {
+    const { title, description, url } = this.state.details;
+    const { classes } = this.props;
+    const githubContent = this.getJSXByState();
     return (
-      <div className={classes.detailContainer}>
+      <Animated
+        animationIn="fadeIn"
+        animationOut="fadeOut"
+        isVisible={true}
+        className={classes.detailContainer}
+      >
         <IconX
           height={"25px"}
           width={"25px"}
@@ -114,15 +138,11 @@ class Detail extends Component<DetailProps, DetailState> {
         />
         <h1>{title}</h1>
         <ReactMarkdown source={description} escapeHtml={false} />
-        {url && (
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            Demo
-          </a>
-        )}
+        {url && <AppLink link={url} component="Demo" />}
         <br />
         <h2>Commit History</h2>
         {githubContent}
-      </div>
+      </Animated>
     );
   }
 }
