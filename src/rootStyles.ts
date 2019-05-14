@@ -7,7 +7,7 @@ const theme = {
       roboto: `"Roboto", "Helvetica", "Arial", "sans-serif"`
     }
   },
-  mixins: {
+  mediaQuery: {
     xl: "@media all and (max-width: 1199px)",
     l: "@media all and (max-width: 991px)",
     m: "@media all (max-width: 768px)",
@@ -19,6 +19,6 @@ const theme = {
 export type AppTheme = {
   typeography: typeof theme.typeography;
   palette: ThemePaletteDark | ThemePaletteLight;
-  mixins: typeof theme.mixins;
+  mediaQuery: typeof theme.mediaQuery;
 };
 export default theme;

@@ -1,36 +1,34 @@
 import { AppTheme } from "../../rootStyles";
 
 const styles = (theme: AppTheme) => ({
-  "@global": {
-    body: {
-      margin: 0,
-      maxWidth: "100vw",
-      overflow: "hidden",
-      backgroundColor: `${theme.palette.bodyMain}`,
-      backgroundPosition: "right top",
-      backgroundRepeat: "repeat-y",
-      backgroundSize: "100% auto",
-      backgroundPositionY: "21.25rem",
-      [`${theme.mixins.l}`]: {
-        overflow: "auto"
-      }
+  video: {
+    position: "fixed",
+    zIndex: -1,
+    // right: 0,
+    // bottom: 0,
+    // width: "100vw",
+    "@media (min-aspect-ratio: 16:9)": {
+      width: "100%",
+      height: "auto"
+    },
+    "@media (max-aspect-ratio: 16:9)": {
+      width: "auto",
+      height: "100%"
+    },
+    [`${theme.mediaQuery.m}`]: {
+      display: "none"
     }
   },
-  main: {
-    color: theme.palette.fontMain,
-    maxWidth: "1200px",
-    minHeight: "100vh",
-    padding: "175px 16px 0 16px",
-    margin: "0 auto",
-    flex: "1 1 auto",
-    overflow: "auto",
-    boxSizing: "border-box",
-    [`${theme.mixins.l}`]: {
-      overflow: "unset",
-      minHeight: "unset"
-    }
+  mainContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100vw",
+    fontFamily: `${theme.typeography.fontStack.roboto}`
   }
 });
-
-export type MainClasses = { main: any };
+export type MainClasses = {
+  video: any;
+  mainContainer: any;
+};
 export default styles;

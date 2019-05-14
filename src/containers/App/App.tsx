@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Sidebar from "../../components/Sidebar/Sidebar";
 import Main from "../../components/Main/Main";
 import injectSheet, { ThemeProvider } from "react-jss";
 import styles, { AppClasses } from "./appStyles";
@@ -58,11 +57,7 @@ class App extends Component<AppProps, AppState> {
     return (
       <ThemeProvider theme={theme}>
         <div className={classes.app}>
-          <Sidebar
-            changeTheme={this.changeTheme}
-            checked={this.state.checked}
-          />
-          <Main />
+          <Main changeTheme={this.changeTheme} checked={this.state.checked} />
         </div>
       </ThemeProvider>
     );

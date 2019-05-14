@@ -1,34 +1,30 @@
 import React, { Component } from "react";
 import injectSheet from "react-jss";
 import styles, { MainClasses } from "./mainStyles";
-import { Switch, Route } from "react-router-dom";
-import List from "../List/List";
-import Detail from "../Detail/Detail";
+import { AppTheme } from "../../rootStyles";
+import video from "../../assets/sea.mp4";
 
 interface MainProps {
   classes: MainClasses;
+  checked: boolean;
+  changeTheme: (checked: boolean) => void;
+  theme: AppTheme;
 }
 
 interface MainState {}
 
 class Main extends Component<MainProps, MainState> {
-  constructor(props: MainProps) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
-    const { classes } = this.props;
+    const { classes, theme } = this.props;
     return (
-      <main className={`${classes.main}`}>
-        <Switch>
-          <Route exact path="/" component={List} />
-          <Route path="/wow" component={Detail} project="test" />
-          <Route path="/labs" component={Detail} project="test" />
-          <Route path="/quotr" component={Detail} project="test" />
-          <Route component={List} />
-        </Switch>
-      </main>
+      <React.Fragment>
+        <video autoPlay muted loop className={classes.video}>
+          <source src={video} type="video/mp4" />
+        </video>
+        <main className={classes.mainContainer}>
+          <h1>I'm Zac</h1>
+        </main>
+      </React.Fragment>
     );
   }
 }

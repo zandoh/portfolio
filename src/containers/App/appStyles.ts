@@ -6,7 +6,7 @@ const styles = (theme: AppTheme) => ({
     flexDirection: "row",
     width: "100vw",
     height: "100vh",
-    [`${theme.mixins.l}`]: {
+    [`${theme.mediaQuery.l}`]: {
       flexDirection: "column"
     }
   }
