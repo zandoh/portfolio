@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import injectSheet from "react-jss";
 import styles, { MainClasses } from "./mainStyles";
-import { AppTheme } from "../../rootStyles";
+import { AppTheme } from "../../rootTheme";
 import video from "../../assets/sea.mp4";
 
 interface MainProps {
@@ -17,14 +17,30 @@ class Main extends Component<MainProps, MainState> {
   render() {
     const { classes, theme } = this.props;
     return (
-      <React.Fragment>
-        <video autoPlay muted loop className={classes.video}>
+      <section className={classes.mainSection}>
+        <video
+          autoPlay
+          muted
+          loop
+          className={`${classes.video} ${classes.parallax}`}
+        >
           <source src={video} type="video/mp4" />
         </video>
-        <main className={classes.mainContainer}>
-          <h1>I'm Zac</h1>
-        </main>
-      </React.Fragment>
+        <div className={`${classes.heroContainer} ${classes.parallax}`}>
+          <div className={classes.copyContainer}>
+            <h1 className={classes.tagLine}>
+              Hello, I'm <span className={classes.contrastText}>Zac.</span>
+            </h1>
+            <p className={classes.description}>
+              An agile{" "}
+              <span className={classes.contrastText}>software engineer</span>{" "}
+              and{" "}
+              <span className={classes.contrastText}>javascript developer</span>{" "}
+              based in New York
+            </p>
+          </div>
+        </div>
+      </section>
     );
   }
 }

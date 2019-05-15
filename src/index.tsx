@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./containers/App/App";
 import { ThemeProvider } from "react-jss";
-import { BrowserRouter } from "react-router-dom";
-import theme from "./rootStyles";
+import theme from "./rootTheme";
 import * as serviceWorker from "./serviceWorker";
 
 declare global {
@@ -30,11 +29,9 @@ window.__getTheme = function(): string {
 };
 
 ReactDOM.render(
-  <BrowserRouter>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
-  </BrowserRouter>,
+  <ThemeProvider theme={theme}>
+    <App />
+  </ThemeProvider>,
   document.getElementById("app")
 );
 
