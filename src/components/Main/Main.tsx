@@ -3,6 +3,14 @@ import injectSheet from "react-jss";
 import styles, { MainClasses } from "./mainStyles";
 import { AppTheme } from "../../rootTheme";
 import video from "../../assets/sea.mp4";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller
+} from "react-scroll";
 
 interface MainProps {
   classes: MainClasses;
@@ -38,6 +46,13 @@ class Main extends Component<MainProps, MainState> {
               <span className={classes.contrastText}>javascript developer</span>{" "}
               based in New York
             </p>
+            <Link to="projects" smooth={true} duration={500} delay={500}>
+              <i
+                className={`${
+                  classes.arrow
+                } animated infinite bounce far fa-arrow-alt-down fa-2x`}
+              />
+            </Link>
           </div>
         </div>
       </section>

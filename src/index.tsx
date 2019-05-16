@@ -4,6 +4,8 @@ import App from "./containers/App/App";
 import { ThemeProvider } from "react-jss";
 import theme from "./rootTheme";
 import * as serviceWorker from "./serviceWorker";
+import "@fortawesome/fontawesome-pro/js/all";
+import "animate.css/animate.min.css";
 
 declare global {
   interface Window {

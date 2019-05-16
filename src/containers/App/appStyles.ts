@@ -32,7 +32,8 @@ const styles = (theme: AppTheme) => ({
   },
   section: {
     position: "relative",
-    zIndex: 1
+    zIndex: 1,
+    minHeight: "100vh"
   }
 });
 

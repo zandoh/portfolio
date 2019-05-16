@@ -7,7 +7,8 @@ const styles = (theme: AppTheme) => ({
     position: "relative",
     top: 0,
     width: "100%",
-    display: "table"
+    display: "table",
+    zIndex: 1
   },
   video: {
     position: "fixed",
@@ -67,6 +68,15 @@ const styles = (theme: AppTheme) => ({
   },
   contrastText: {
     color: "red"
+  },
+  arrow: {
+    display: "block",
+    color: "white",
+    textAlign: "center",
+    margin: "50px auto 0 auto",
+    "&:hover": {
+      cursor: "pointer"
+    }
   }
 });
 export type MainClasses = {
@@ -78,5 +88,6 @@ export type MainClasses = {
   tagLine: any;
   description: any;
   contrastText: any;
+  arrow: any;
 };
 export default styles;
