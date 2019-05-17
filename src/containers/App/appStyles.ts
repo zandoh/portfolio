@@ -34,6 +34,10 @@ const styles = (theme: AppTheme) => ({
     position: "relative",
     zIndex: 1,
     minHeight: "100vh",
+    marginBottom: "150px",
+    "&:last-of-type": {
+      marginBottom: "0"
+    },
     "& > *": {
       height: "100%",
       overflow: "hidden"

@@ -19,8 +19,8 @@ class Projects extends Component<ProjectsProps, ProjectsState> {
       <section className={classes.projectsContainer}>
         <h1 className={classes.title}>Projects.</h1>
         <p className={classes.description}>
-          Please check some of mine recent projects below. More projects and
-          works can be found on my <AppLink link={gitHub} component="GitHub" />
+          Feel free to check some of my recent projects below. More can be found
+          on my <AppLink link={gitHub} component="GitHub" />
         </p>
         <div className={classes.listImageWrapper}>
           <div className={classes.listContainer}>
