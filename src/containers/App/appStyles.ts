@@ -33,7 +33,11 @@ const styles = (theme: AppTheme) => ({
   section: {
     position: "relative",
     zIndex: 1,
-    minHeight: "100vh"
+    minHeight: "100vh",
+    "& > *": {
+      height: "100%",
+      overflow: "hidden"
+    }
   }
 });
 

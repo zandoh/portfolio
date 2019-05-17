@@ -79,7 +79,7 @@ const styles = (theme: AppTheme) => ({
     }
   }
 });
-export type MainClasses = {
+export type HeroClasses = {
   mainSection: any;
   video: any;
   heroContainer: any;

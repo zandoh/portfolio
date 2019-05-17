@@ -1,27 +1,20 @@
 import React, { Component } from "react";
 import injectSheet from "react-jss";
-import styles, { MainClasses } from "./mainStyles";
+import styles, { HeroClasses } from "./heroStyles";
 import { AppTheme } from "../../rootTheme";
 import video from "../../assets/sea.mp4";
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller
-} from "react-scroll";
+import { Link } from "react-scroll";
 
-interface MainProps {
-  classes: MainClasses;
+interface HeroProps {
+  classes: HeroClasses;
   checked: boolean;
   changeTheme: (checked: boolean) => void;
   theme: AppTheme;
 }
 
-interface MainState {}
+interface HeroState {}
 
-class Main extends Component<MainProps, MainState> {
+class Hero extends Component<HeroProps, HeroState> {
   render() {
     const { classes, theme } = this.props;
     return (
@@ -46,7 +39,7 @@ class Main extends Component<MainProps, MainState> {
               <span className={classes.contrastText}>javascript developer</span>{" "}
               based in New York
             </p>
-            <Link to="projects" smooth={true} duration={500} delay={500}>
+            <Link to="projects" smooth={true} duration={500}>
               <i
                 className={`${
                   classes.arrow
@@ -60,4 +53,4 @@ class Main extends Component<MainProps, MainState> {
   }
 }
 
-export default injectSheet(styles)(Main);
+export default injectSheet(styles)(Hero);
