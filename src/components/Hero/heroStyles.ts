@@ -49,7 +49,7 @@ const styles = (theme: AppTheme) => ({
     transform: "translate(-50%,-50%)",
     width: "500px",
     [`${theme.mediaQuery.s}`]: {
-      width: "auto"
+      width: "70%"
     }
   },
   tagLine: {

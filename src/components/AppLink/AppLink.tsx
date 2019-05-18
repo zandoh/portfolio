@@ -2,7 +2,7 @@ import React from "react";
 
 export const AppLink = function<T>(props: {
   link: string;
-  component: T;
+  child: T;
   className?: string;
 }) {
   return (
@@ -12,7 +12,7 @@ export const AppLink = function<T>(props: {
       target="_blank"
       rel="noopener noreferrer"
     >
-      {props.component}
+      {props.child}
     </a>
   );
 };

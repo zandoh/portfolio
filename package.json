@@ -4,31 +4,22 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^5.8.2",
-    "@types/jest": "^24.0.9",
-    "@types/node": "^11.10.4",
-    "@types/react": "^16.8.6",
-    "@types/react-dom": "^16.8.2",
-    "@types/react-jss": "^8.6.3",
-    "@types/react-router": "^4.4.5",
-    "@types/react-router-dom": "^4.3.1",
     "animate.css": "^3.7.0",
-    "contentful": "^7.3.0",
     "react": "^16.8.3",
-    "react-animated-css": "^1.0.5",
     "react-background-video-player": "^1.1.6",
     "react-dom": "^16.8.3",
+    "react-jss": "^8.6.1",
     "react-markdown": "^4.0.6",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5",
     "react-scroll": "^1.7.11",
-    "react-typed": "^1.1.1",
-    "typescript": "^3.3.3333",
-    "video-react": "^0.13.7"
+    "react-switch": "^4.1.0",
+    "react-typed": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "REACT_APP_CONTENTFUL_TOKEN=bc65cc0cc8cb2908e69dc2b4485c58021e5c80a04a90f38781361a0e59455b8e REACT_APP_CONTENTFUL_SPACE=2i2w9wxt7asr react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -42,7 +33,13 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "react-jss": "^8.6.1",
-    "react-switch": "^4.1.0"
+    "@types/jest": "^24.0.9",
+    "@types/node": "^11.10.4",
+    "@types/react": "^16.8.6",
+    "@types/react-dom": "^16.8.2",
+    "@types/react-jss": "^8.6.3",
+    "@types/react-router": "^4.4.5",
+    "@types/react-router-dom": "^4.3.1",
+    "typescript": "^3.3.3333"
   }
 }

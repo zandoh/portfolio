@@ -4,15 +4,7 @@ import styles, { AppClasses } from "./appStyles";
 import darkTheme, { ThemePaletteDark } from "../../themeDark";
 import lightTheme, { ThemePaletteLight } from "../../themeLight";
 import { AppTheme } from "../../rootTheme";
-import * as Scroll from "react-scroll";
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller
-} from "react-scroll";
+import { Element } from "react-scroll";
 import Hero from "../../components/Hero/Hero";
 import About from "../../components/About/About";
 import Projects from "../../components/Projects/Projects";

@@ -39,6 +39,7 @@ const styles = (theme: AppTheme) => ({
       marginBottom: "0"
     },
     "& > *": {
+      minHeight: "100vh",
       height: "100%",
       overflow: "hidden"
     }
