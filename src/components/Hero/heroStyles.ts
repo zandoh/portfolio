@@ -67,7 +67,7 @@ const styles = (theme: AppTheme) => ({
     margin: 0
   },
   contrastText: {
-    color: "red"
+    color: "#99ccff"
   },
   arrow: {
     display: "block",

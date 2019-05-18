@@ -64,9 +64,9 @@ class App extends Component<AppProps, AppState> {
           <Element name="projects" className={classes.section}>
             <Projects />
           </Element>
-          <Element className={classes.section}>
+          {/* <Element className={classes.section}>
             <About />
-          </Element>
+          </Element> */}
         </div>
       </ThemeProvider>
     );
