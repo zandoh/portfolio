@@ -27,7 +27,7 @@ class Hero extends Component<HeroProps, HeroState> {
         >
           <source src={video} type="video/mp4" />
         </video>
-        <div className={`${classes.heroContainer} ${classes.parallax}`}>
+        <div className={`${classes.heroContainer} ${classes.parallax} `}>
           <div className={classes.copyContainer}>
             <h1 className={classes.tagLine}>
               Hello, I'm <span className={classes.contrastText}>Zac.</span>
