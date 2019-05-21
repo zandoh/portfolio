@@ -3,6 +3,7 @@ import injectSheet from "react-jss";
 import styles, { HeroClasses } from "./heroStyles";
 import { AppTheme } from "../../rootTheme";
 import video from "../../assets/sea.mp4";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-scroll";
 
 interface HeroProps {
@@ -20,9 +21,11 @@ class Hero extends Component<HeroProps, HeroState> {
     return (
       <section className={classes.mainSection}>
         <video
+          preload={"auto"}
           autoPlay
           muted
           loop
+          playsInline
           className={`${classes.video} ${classes.parallax}`}
         >
           <source src={video} type="video/mp4" />
@@ -40,10 +43,9 @@ class Hero extends Component<HeroProps, HeroState> {
               based in New York
             </p>
             <Link to="projects" smooth={true} duration={500}>
-              <i
-                className={`${
-                  classes.arrow
-                } animated infinite bounce far fa-arrow-alt-down fa-2x`}
+              <FontAwesomeIcon
+                className={`${classes.arrow} animated infinite bounce fa-2x`}
+                icon={["far", "arrow-alt-down"]}
               />
             </Link>
           </div>

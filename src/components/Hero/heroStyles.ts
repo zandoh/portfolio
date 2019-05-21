@@ -32,6 +32,7 @@ const styles = (theme: AppTheme) => ({
     justifyContent: "center",
     width: "100vw",
     fontFamily: `${theme.typeography.fontStack.roboto}`,
+    fontDisplay: "auto",
     height: "100%",
     backgroundColor: "rgba(0, 0, 0, 0.8)"
   },

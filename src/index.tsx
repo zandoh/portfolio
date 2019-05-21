@@ -4,8 +4,11 @@ import App from "./containers/App/App";
 import { ThemeProvider } from "react-jss";
 import theme from "./rootTheme";
 import * as serviceWorker from "./serviceWorker";
-import "@fortawesome/fontawesome-pro/js/all";
 import "animate.css/animate.min.css";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faArrowAltDown } from "@fortawesome/pro-regular-svg-icons";
+
+library.add(faArrowAltDown);
 
 declare global {
   interface Window {
