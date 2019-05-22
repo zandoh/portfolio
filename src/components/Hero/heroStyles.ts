@@ -56,23 +56,23 @@ const styles = (theme: AppTheme) => ({
   tagLine: {
     fontSize: "4.875em",
     fontWeight: "500",
-    color: "white",
+    color: `${theme.palette.text}`,
     padding: 0,
     margin: 0
   },
   description: {
     fontSize: "1.750em",
     lineHeight: "42px",
-    color: "white",
+    color: `${theme.palette.text}`,
     padding: 0,
     margin: 0
   },
   contrastText: {
-    color: "#99ccff"
+    color: `${theme.palette.contrastText}`
   },
   arrow: {
     display: "block",
-    color: "white",
+    color: `${theme.palette.text}`,
     textAlign: "center",
     margin: "50px auto 0 auto",
     "&:hover": {

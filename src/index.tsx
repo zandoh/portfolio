@@ -26,7 +26,7 @@ window.__setTheme = function(themePref: string) {
 };
 
 window.__getTheme = function(): string {
-  var themePref = "dark";
+  var themePref = "light";
   try {
     (themePref as any) = localStorage.getItem("theme");
   } catch (err) {}

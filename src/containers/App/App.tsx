@@ -16,7 +16,7 @@ interface AppProps {
 
 interface AppState {
   theme: AppTheme;
-  palette: ThemePaletteDark | ThemePaletteLight;
+  palette: ThemePaletteLight | ThemePaletteDark;
   checked: boolean;
   themePref: string;
 }
@@ -26,17 +26,17 @@ class App extends Component<AppProps, AppState> {
     super(props);
     this.state = {
       theme: this.props.theme,
-      palette: darkTheme,
-      checked: false,
-      themePref: "dark"
+      palette: lightTheme,
+      checked: true,
+      themePref: "light"
     };
   }
 
   componentDidMount() {
     this.setState({
       themePref: window.__getTheme(),
-      checked: window.__getTheme() === "light" ? true : false,
-      palette: window.__getTheme() === "light" ? lightTheme : darkTheme
+      checked: window.__getTheme() === "dark" ? false : true,
+      palette: window.__getTheme() === "dark" ? darkTheme : lightTheme
     });
   }
 

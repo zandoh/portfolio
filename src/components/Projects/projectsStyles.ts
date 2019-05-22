@@ -2,7 +2,7 @@ import { AppTheme } from "../../rootTheme";
 
 const styles = (theme: AppTheme) => ({
   projectsContainer: {
-    background: "white",
+    background: `${theme.palette.background}`,
     padding: "150px 100px 25px",
     [`${theme.mediaQuery.s}`]: {
       padding: "150px 50px 25px"
@@ -14,7 +14,7 @@ const styles = (theme: AppTheme) => ({
     fontFamily: `${theme.typeography.fontStack.roboto}`,
     fontDisplay: "auto",
     fontWeight: "700",
-    color: "rgba(1,1,1,1)",
+    color: `${theme.palette.textInvert}`,
     letterSpacing: "2px",
     textTransform: "lowercase"
   },
@@ -26,7 +26,7 @@ const styles = (theme: AppTheme) => ({
     fontSize: "16px",
     fontWeight: "500",
     lineHeight: "28px",
-    color: "rgba(71,71,71,0.9)",
+    color: `${theme.palette.textInvertLight}`,
     [`${theme.mediaQuery.l}`]: {
       width: "50%"
     },
@@ -60,7 +60,7 @@ const styles = (theme: AppTheme) => ({
     wordBreak: "break-word",
     padding: 0,
     "& > h2": {
-      color: "black",
+      color: `${theme.palette.textInvert}`,
       transition: "color .2s ease",
       fontFamily: `${theme.typeography.fontStack.roboto}`,
       fontDisplay: "auto",
@@ -72,7 +72,7 @@ const styles = (theme: AppTheme) => ({
       verticalAlign: "baseline",
       background: "transparent",
       "&:hover": {
-        color: "grey"
+        color: `${theme.palette.textInvertHover}`
       }
     }
   },
