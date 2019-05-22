@@ -78,6 +78,11 @@ const styles = (theme: AppTheme) => ({
     "&:hover": {
       cursor: "pointer"
     }
+  },
+  switch: {
+    position: "absolute !important",
+    top: "25px",
+    right: "25px"
   }
 });
 export type HeroClasses = {
@@ -90,5 +95,6 @@ export type HeroClasses = {
   description: any;
   contrastText: any;
   arrow: any;
+  switch: any;
 };
 export default styles;
