@@ -90,7 +90,8 @@ class Projects extends Component<ProjectsProps, ProjectsState> {
         <h1 className={classes.title}>Projects.</h1>
         <p className={classes.description}>
           Feel free to check some of my recent projects below. More can be found
-          on my <AppLink link={gitHub} child="GitHub" />.
+          on my{" "}
+          <AppLink link={gitHub} title={"GitHub Profile"} child="GitHub" />.
         </p>
         <div className={classes.listImageWrapper}>
           <div className={classes.listContainer}>
@@ -102,6 +103,7 @@ class Projects extends Component<ProjectsProps, ProjectsState> {
                 >
                   <AppLink
                     link={project.link}
+                    title={project.title}
                     className={classes.listLink}
                     child={
                       <h2

@@ -8,6 +8,7 @@
     "@fortawesome/pro-regular-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "animate.css": "^3.7.0",
+    "avataaars": "^1.2.1",
     "react": "^16.8.3",
     "react-background-video-player": "^1.1.6",
     "react-dom": "^16.8.3",

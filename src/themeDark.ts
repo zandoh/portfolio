@@ -4,8 +4,8 @@ const dark = {
   textInvert: "#fff",
   textInvertHover: "#000",
   background: "#474747",
-  backgroundInvert: "#FCB514",
-  contrastText: "#FCB514"
+  backgroundInvert: "#F76902",
+  contrastText: "#F76902"
 };
 
 export default dark;

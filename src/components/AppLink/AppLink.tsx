@@ -4,6 +4,7 @@ export const AppLink = function<T>(props: {
   link: string;
   child: T;
   className?: string;
+  title?: string;
 }) {
   return (
     <a
@@ -11,6 +12,7 @@ export const AppLink = function<T>(props: {
       className={props.className}
       target="_blank"
       rel="noopener noreferrer"
+      title={props.title}
     >
       {props.child}
     </a>

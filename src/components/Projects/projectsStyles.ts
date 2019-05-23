@@ -50,7 +50,8 @@ const styles = (theme: AppTheme) => ({
     }
   },
   imageContainer: {
-    flex: "1 1 50%"
+    flex: "1 1 50%",
+    marginTop: "-200px"
   },
   listLink: {
     textDecoration: "none",
