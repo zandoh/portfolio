@@ -9,7 +9,8 @@ const styles = (theme: AppTheme) => ({
       flex: "1 1 50%"
     },
     [`${theme.mediaQuery.l}`]: {
-      flexDirection: "column-reverse"
+      flexDirection: "column-reverse",
+      height: "auto !important"
     }
   },
   descriptionContainer: {
@@ -51,16 +52,21 @@ const styles = (theme: AppTheme) => ({
     lineHeight: "36px"
   },
   iconContainer: {
-    marginTop: "200px"
+    marginTop: "200px",
+    [`${theme.mediaQuery.l}`]: {
+      display: "flex",
+      justifyContent: "space-between"
+    }
   },
   svg: {
     marginRight: "50px",
     transition: "color .2s ease",
     fill: `${theme.palette.textInvert}`,
-    height: "50",
-    width: "50",
     "&:hover": {
       fill: `${theme.palette.textInvertHover}`
+    },
+    [`${theme.mediaQuery.l}`]: {
+      marginRight: "0"
     }
   }
 });
