@@ -7,6 +7,7 @@ import * as serviceWorker from "./serviceWorker";
 import "animate.css/animate.min.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faArrowAltDown } from "@fortawesome/pro-regular-svg-icons";
+import { GlobalStyles } from "./containers/App/styled";
 
 library.add(faArrowAltDown);
 
@@ -35,6 +36,7 @@ window.__getTheme = function(): string {
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
+    <GlobalStyles />
     <App />
   </ThemeProvider>,
   document.getElementById("app")

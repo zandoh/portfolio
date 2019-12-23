@@ -2,31 +2,32 @@ import React from "react";
 import { useContext } from "react";
 import { ThemeContext } from "styled-components";
 import video from "../../assets/sea.mp4";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-scroll";
-import Switch from "react-switch";
+import {
+  svgStyle,
+  HeroMainSection,
+  HeroSwitch,
+  HeroVideo,
+  HeroContainer,
+  HeroCopyContainer,
+  HeroTagLine,
+  HeroContrastText,
+  HeroDescription,
+  HeroArrow
+} from "./styled";
 
 interface HeroProps {
   checked: boolean;
   changeTheme: (checked: boolean) => void;
 }
 
-const svgStyle = {
-  height: "20px",
-  width: "20px",
-  position: "absolute" as "absolute",
-  top: "6px",
-  right: "4px"
-};
-
 const Hero: React.FC<HeroProps> = ({ changeTheme, checked }) => {
   const classes: any = {};
   const themeContext = useContext(ThemeContext);
   console.log("Current theme: ", themeContext);
   return (
-    <section className={classes.mainSection}>
-      <Switch
-        className={classes.switch}
+    <HeroMainSection>
+      <HeroSwitch
         onChange={changeTheme}
         offColor="#C0C0C0"
         onColor="#EEE8AA"
@@ -43,36 +44,28 @@ const Hero: React.FC<HeroProps> = ({ changeTheme, checked }) => {
         }
         aria-label="Switch to toggle between light and dark themes"
       />
-      <video
-        preload={"auto"}
-        autoPlay
-        muted
-        loop
-        playsInline
-        className={`${classes.video} ${classes.parallax}`}
-      >
+      <HeroVideo preload={"auto"} autoPlay muted loop playsInline>
         <source src={video} type="video/mp4" />
-      </video>
-      <div className={`${classes.heroContainer} ${classes.parallax}`}>
-        <div className={classes.copyContainer}>
-          <h1 className={classes.tagLine}>
-            Hello, I'm <span className={classes.contrastText}>Zac.</span>
-          </h1>
-          <p className={classes.description}>
-            An agile{" "}
-            <span className={classes.contrastText}>software engineer</span> and{" "}
-            <span className={classes.contrastText}>javascript developer</span>{" "}
-            based in New York
-          </p>
-          <Link to="projects" smooth={true} duration={500}>
-            <FontAwesomeIcon
-              className={`${classes.arrow} animated infinite bounce fa-2x`}
-              icon={["far", "arrow-alt-down"]}
-            />
-          </Link>
-        </div>
-      </div>
-    </section>
+      </HeroVideo>
+      <HeroContainer>
+        <HeroCopyContainer>
+          <HeroTagLine>
+            Hello, I'm <HeroContrastText>Zac.</HeroContrastText>
+          </HeroTagLine>
+        </HeroCopyContainer>
+        <HeroDescription>
+          An agile <HeroContrastText>software engineer</HeroContrastText> and{" "}
+          <HeroContrastText>javascript developer</HeroContrastText> based in New
+          York
+        </HeroDescription>
+        <Link to="projects" smooth={true} duration={500}>
+          <HeroArrow
+            className={`${classes.arrow} animated infinite bounce fa-2x`}
+            icon={["far", "arrow-alt-down"]}
+          />
+        </Link>
+      </HeroContainer>
+    </HeroMainSection>
   );
 };
 

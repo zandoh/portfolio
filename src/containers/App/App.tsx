@@ -5,7 +5,7 @@ import lightTheme from "../../themeLight";
 import Hero from "../../components/Hero/Hero";
 import About from "../../components/About/About";
 import Projects from "../../components/Projects/Projects";
-import { AppWrapper, AppSection, GlobalStyles } from "./styled";
+import { AppWrapper, AppSection } from "./styled";
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState({ palette: lightTheme });
@@ -22,15 +22,14 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
       <AppWrapper>
         <Hero changeTheme={changeTheme} checked={checked} />
         <AppSection name="projects">
           <Projects />
         </AppSection>
-        <AppSection>
+        {/* <AppSection>
           <About />
-        </AppSection>
+        </AppSection> */}
       </AppWrapper>
     </ThemeProvider>
   );
