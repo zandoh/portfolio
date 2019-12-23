@@ -1,76 +1,45 @@
-import React, { Component } from "react";
-import injectSheet, { ThemeProvider } from "react-jss";
-import styles, { AppClasses } from "./appStyles";
-import darkTheme, { ThemePaletteDark } from "../../themeDark";
-import lightTheme, { ThemePaletteLight } from "../../themeLight";
-import { AppTheme } from "../../rootTheme";
+import React, { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import darkTheme from "../../themeDark";
+import lightTheme from "../../themeLight";
 import { Element } from "react-scroll";
 import Hero from "../../components/Hero/Hero";
 import About from "../../components/About/About";
 import Projects from "../../components/Projects/Projects";
 
-interface AppProps {
-  theme: AppTheme;
-  classes: AppClasses;
-}
-
-interface AppState {
-  theme: AppTheme;
-  palette: ThemePaletteLight | ThemePaletteDark;
-  checked: boolean;
-  themePref: string;
-}
-
-class App extends Component<AppProps, AppState> {
-  constructor(props: AppProps) {
-    super(props);
-    this.state = {
-      theme: this.props.theme,
-      palette: lightTheme,
-      checked: true,
-      themePref: "light"
-    };
-  }
-
-  componentDidMount() {
-    this.setState({
-      themePref: window.__getTheme(),
-      checked: window.__getTheme() === "dark" ? false : true,
-      palette: window.__getTheme() === "dark" ? darkTheme : lightTheme
-    });
-  }
-
-  changeTheme = (checked: boolean) => {
-    const themePref = checked ? "light" : "dark";
-    const palette = themePref === "light" ? lightTheme : darkTheme;
-    this.setState({
-      checked,
-      themePref,
-      palette
-    });
-    window.__setTheme(themePref);
+const App: React.FC = () => {
+  const [theme] = useState({});
+  // eslint-disable-next-line
+  const [palette, setPalette] = useState(
+    window.__getTheme() === "dark" ? darkTheme : lightTheme
+  );
+  const [checked, setChecked] = useState(
+    window.__getTheme() === "dark" ? false : true
+  );
+  const [themePref, setThemePref] = useState(window.__getTheme());
+  const changeTheme = (checked: boolean) => {
+    const _themePref = checked ? "light" : "dark";
+    const _palette = themePref === "light" ? lightTheme : darkTheme;
+    setChecked(checked);
+    setThemePref(_themePref);
+    setPalette(_palette);
+    window.__setTheme(_themePref);
   };
+  const classes: any = {};
 
-  render() {
-    const { classes } = this.props;
-    const theme = {
-      ...this.state.theme,
-      palette: this.state.palette
-    };
-    return (
-      <ThemeProvider theme={theme}>
-        <div className={classes.app}>
-          <Hero changeTheme={this.changeTheme} checked={this.state.checked} />
-          <Element name="projects" className={classes.section}>
-            <Projects />
-          </Element>
-          <Element className={classes.section}>
-            <About />
-          </Element>
-        </div>
-      </ThemeProvider>
-    );
-  }
-}
+  return (
+    <ThemeProvider theme={theme}>
+      <div className={classes.app}>
+        <Hero changeTheme={changeTheme} checked={checked} />
+        <Element name="projects" className={classes.section}>
+          <Projects />
+        </Element>
+        <Element className={classes.section}>
+          <About />
+        </Element>
+      </div>
+    </ThemeProvider>
+  );
+};
 
-export default injectSheet(styles)(App);
+export default App;

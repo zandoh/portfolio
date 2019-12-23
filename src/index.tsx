@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./containers/App/App";
-import { ThemeProvider } from "react-jss";
+import { ThemeProvider } from "styled-components";
 import theme from "./rootTheme";
 import * as serviceWorker from "./serviceWorker";
 import "animate.css/animate.min.css";

@@ -1,14 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 
 interface ProjectImageProps {
   imageSrc: string;
   altText: string;
 }
 
-class ProjectImage extends Component<ProjectImageProps, {}> {
-  render() {
-    return <img src={this.props.imageSrc} alt={this.props.altText} />;
-  }
-}
+const ProjectImage: React.FC<ProjectImageProps> = ({ imageSrc, altText }) => {
+  return <img src={imageSrc} alt={altText} />;
+};
 
 export default ProjectImage;
