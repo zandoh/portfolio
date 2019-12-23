@@ -2,42 +2,36 @@ import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import darkTheme from "../../themeDark";
 import lightTheme from "../../themeLight";
-import { Element } from "react-scroll";
 import Hero from "../../components/Hero/Hero";
 import About from "../../components/About/About";
 import Projects from "../../components/Projects/Projects";
+import { AppWrapper, AppSection, GlobalStyles } from "./styled";
 
 const App: React.FC = () => {
-  const [theme] = useState({});
-  // eslint-disable-next-line
-  const [palette, setPalette] = useState(
-    window.__getTheme() === "dark" ? darkTheme : lightTheme
-  );
+  const [theme, setTheme] = useState({ palette: lightTheme });
   const [checked, setChecked] = useState(
     window.__getTheme() === "dark" ? false : true
   );
-  const [themePref, setThemePref] = useState(window.__getTheme());
   const changeTheme = (checked: boolean) => {
-    const _themePref = checked ? "light" : "dark";
-    const _palette = themePref === "light" ? lightTheme : darkTheme;
+    const themePref = checked ? "light" : "dark";
+    const palette = checked ? lightTheme : darkTheme;
     setChecked(checked);
-    setThemePref(_themePref);
-    setPalette(_palette);
-    window.__setTheme(_themePref);
+    setTheme({ ...theme, palette: palette });
+    window.__setTheme(themePref);
   };
-  const classes: any = {};
 
   return (
     <ThemeProvider theme={theme}>
-      <div className={classes.app}>
+      <GlobalStyles />
+      <AppWrapper>
         <Hero changeTheme={changeTheme} checked={checked} />
-        <Element name="projects" className={classes.section}>
+        <AppSection name="projects">
           <Projects />
-        </Element>
-        <Element className={classes.section}>
+        </AppSection>
+        <AppSection>
           <About />
-        </Element>
-      </div>
+        </AppSection>
+      </AppWrapper>
     </ThemeProvider>
   );
 };

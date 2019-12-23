@@ -5,7 +5,17 @@ import ProjectImage from "../ProjectImage/ProjectImage";
 import portfolioImage from "../../assets/portfolio.jpg";
 import wowImage from "../../assets/wow.jpg";
 import quotrImage from "../../assets/quote.jpg";
-import { ProjectsContainer } from "./styled";
+import {
+  ProjectsContainer,
+  ProjectsTitle,
+  ProjectsDescription,
+  ProjectsImageListWrapper,
+  ProjectsListContainer,
+  ProjectsImageContainer,
+  ProjectsProjectImage,
+  ProjectsListArticle,
+  ProjectsListLink
+} from "./styled";
 
 const Projects: React.FC<{}> = () => {
   const [projectImage, setProjectImage] = useState("");
@@ -19,7 +29,7 @@ const Projects: React.FC<{}> = () => {
   };
 
   useEffect(() => {
-    setHideProjectImage(window?.innerWidth <= 991);
+    setHideProjectImage(window.innerWidth <= 991);
   }, []);
 
   const classes: any = {};
@@ -50,17 +60,17 @@ const Projects: React.FC<{}> = () => {
 
   return (
     <ProjectsContainer>
-      <h1 className={classes.title}>Projects.</h1>
-      <p className={classes.description}>
+      <ProjectsTitle>Projects.</ProjectsTitle>
+      <ProjectsDescription>
         Feel free to check some of my recent projects below. More can be found
         on my <AppLink link={gitHub} title={"GitHub Profile"} child="GitHub" />.
-      </p>
-      <div className={classes.listImageWrapper}>
-        <div className={classes.listContainer}>
+      </ProjectsDescription>
+      <ProjectsImageListWrapper>
+        <ProjectsListContainer>
           {projects.map((project, index) => {
             return (
-              <article key={`project-${index}`} className={classes.listArticle}>
-                <AppLink
+              <ProjectsListArticle>
+                <ProjectsListLink
                   link={project.link}
                   title={project.title}
                   className={classes.listLink}
@@ -73,20 +83,18 @@ const Projects: React.FC<{}> = () => {
                     </h2>
                   }
                 />
-              </article>
+              </ProjectsListArticle>
             );
           })}
-        </div>
-        <div className={classes.imageContainer}>
+        </ProjectsListContainer>
+        <ProjectsImageContainer>
           {!hideProjectImage && (
-            <aside className={classes.projectImage}>
-              {isHovering && (
-                <ProjectImage imageSrc={projectImage} altText={projectAlt} />
-              )}
-            </aside>
+            <ProjectsProjectImage>
+              <ProjectImage imageSrc={projectImage} altText={projectAlt} />
+            </ProjectsProjectImage>
           )}
-        </div>
-      </div>
+        </ProjectsImageContainer>
+      </ProjectsImageListWrapper>
     </ProjectsContainer>
   );
 };
