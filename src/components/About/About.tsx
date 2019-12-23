@@ -4,6 +4,15 @@ import { ReactComponent as IconLinkedIn } from "../../assets/linkedin.svg";
 import { ReactComponent as IconTwitter } from "../../assets/twitter.svg";
 import { AppLink } from "../AppLink/AppLink";
 import Avatar from "avataaars";
+import {
+  AboutWrapper,
+  AboutDescriptionContainer,
+  AboutAvatarContainer,
+  AboutTitle,
+  AboutDescription,
+  AboutIconContainer
+} from './styled'
+import { svgStyle } from "../Hero/styled";
 
 const width: number = 50;
 const height: number = 50;
@@ -12,23 +21,22 @@ const linkedinLink = "https://www.linkedin.com/in/zrclark/";
 const twitterLink = "https://twitter.com/Zandoh_";
 
 const About: React.FC<{}> = () => {
-  const classes: any = {};
   return (
-    <section className={classes.aboutSection}>
-      <div className={classes.descriptionContainer}>
-        <h2 className={classes.title}>About Me.</h2>
-        <p className={classes.description}>
+    <AboutWrapper>
+      <AboutDescriptionContainer>
+        <AboutTitle>About Me.</AboutTitle>
+        <AboutDescription>
           I'm an RIT graduate from Upstate, NY. I'm very passionate about web
           development and hockey. My favorite professional hockey team is the
           Pittsburgh Penguins. My favorite player is Evgeni Malkin.
-        </p>
-        <div className={classes.iconContainer}>
+        </AboutDescription>
+        <AboutIconContainer>
           <AppLink
             link={githubLink}
             title={"GitHub Profile"}
             child={
               <IconGithub
-                className={classes.svg}
+                style={svgStyle}
                 width={width}
                 height={height}
               />
@@ -39,7 +47,7 @@ const About: React.FC<{}> = () => {
             title={"LinkedIn Profile"}
             child={
               <IconLinkedIn
-                className={classes.svg}
+                style={svgStyle}
                 width={width}
                 height={height}
               />
@@ -50,15 +58,15 @@ const About: React.FC<{}> = () => {
             title={"Twitter Profile"}
             child={
               <IconTwitter
-                className={classes.svg}
+                style={svgStyle}
                 width={width}
                 height={height}
               />
             }
           />
-        </div>
-      </div>
-      <div className={classes.avatarContainer}>
+        </AboutIconContainer>
+      </AboutDescriptionContainer>
+      <AboutAvatarContainer>
         <Avatar
           avatarStyle="Transparent"
           topType="ShortHairShortCurly"
@@ -72,8 +80,8 @@ const About: React.FC<{}> = () => {
           mouthType="Default"
           skinColor="Pale"
         />
-      </div>
-    </section>
+      </AboutAvatarContainer>
+    </AboutWrapper>
   );
 };
 

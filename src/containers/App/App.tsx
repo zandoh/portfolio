@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ThemeProvider } from "styled-components";
+import React, { useState, useContext } from "react";
+import { ThemeProvider, ThemeContext } from "styled-components";
 import darkTheme from "../../themeDark";
 import lightTheme from "../../themeLight";
 import Hero from "../../components/Hero/Hero";
@@ -8,7 +8,7 @@ import Projects from "../../components/Projects/Projects";
 import { AppWrapper, AppSection } from "./styled";
 
 const App: React.FC = () => {
-  const [theme, setTheme] = useState({ palette: lightTheme });
+  const [theme, setTheme] = useState({ ...useContext(ThemeContext), palette: lightTheme });
   const [checked, setChecked] = useState(
     window.__getTheme() === "dark" ? false : true
   );
@@ -27,9 +27,9 @@ const App: React.FC = () => {
         <AppSection name="projects">
           <Projects />
         </AppSection>
-        {/* <AppSection>
+        <AppSection>
           <About />
-        </AppSection> */}
+        </AppSection>
       </AppWrapper>
     </ThemeProvider>
   );

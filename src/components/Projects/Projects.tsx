@@ -20,6 +20,7 @@ import {
 const Projects: React.FC<{}> = () => {
   const [projectImage, setProjectImage] = useState("");
   const [projectAlt, setProjectAlt] = useState("");
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isHovering, setIsHovering] = useState(false);
   const [hideProjectImage, setHideProjectImage] = useState(false);
   const handleMouseHover = (project: IProject) => {
@@ -32,7 +33,6 @@ const Projects: React.FC<{}> = () => {
     setHideProjectImage(window.innerWidth <= 991);
   }, []);
 
-  const classes: any = {};
   const gitHub = "https://github.com/zandoh";
   const projects: IProject[] = [
     {
@@ -69,11 +69,10 @@ const Projects: React.FC<{}> = () => {
         <ProjectsListContainer>
           {projects.map((project, index) => {
             return (
-              <ProjectsListArticle>
+              <ProjectsListArticle key={`Project-${index}`}>
                 <ProjectsListLink
                   link={project.link}
                   title={project.title}
-                  className={classes.listLink}
                   child={
                     <h2
                       onMouseEnter={() => handleMouseHover(project)}

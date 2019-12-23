@@ -1,6 +1,4 @@
 import React from "react";
-import { useContext } from "react";
-import { ThemeContext } from "styled-components";
 import video from "../../assets/sea.mp4";
 import { Link } from "react-scroll";
 import {
@@ -22,9 +20,6 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ changeTheme, checked }) => {
-  const classes: any = {};
-  const themeContext = useContext(ThemeContext);
-  console.log("Current theme: ", themeContext);
   return (
     <HeroMainSection>
       <HeroSwitch
@@ -60,7 +55,7 @@ const Hero: React.FC<HeroProps> = ({ changeTheme, checked }) => {
         </HeroDescription>
         <Link to="projects" smooth={true} duration={500}>
           <HeroArrow
-            className={`${classes.arrow} animated infinite bounce fa-2x`}
+            className={`animated infinite bounce fa-2x`}
             icon={["far", "arrow-alt-down"]}
           />
         </Link>
