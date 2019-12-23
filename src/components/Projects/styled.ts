@@ -4,9 +4,9 @@ import { AppLink } from "../AppLink/AppLink";
 export const ProjectsContainer = styled.section`
   background: ${props => props.theme.palette.background};
   padding: 150px 100px 25px;
-  ${props => props.theme.mediaQuery.s}: {
+  ${props => props.theme.mediaQuery.s} {
     padding: 150px 50px 25px;
-  };
+  }
 `;
 
 export const ProjectsTitle = styled.h1`
@@ -29,12 +29,12 @@ export const ProjectsDescription = styled.p`
   font-weight: 500;
   line-height: 28px;
   color: ${props => props.theme.palette.textInvertLight};
-  ${props => props.theme.mediaQuery.l}: {
+  ${props => props.theme.mediaQuery.l} {
     width: 50%;
-  };
-  ${props => props.theme.mediaQuery.s}: {
+  }
+  ${props => props.theme.mediaQuery.s} {
     width: 100%;
-  };
+  }
 `;
 
 export const ProjectsImageListWrapper = styled.div`
@@ -46,17 +46,17 @@ export const ProjectsListContainer = styled.div`
   flex: 1 1 50%;
   margin: 0 auto;
   padding-right: 75px;
-  ${props => props.theme.mediaQuery.l}: {
+  ${props => props.theme.mediaQuery.l} {
     flex: 1 1 100%;
-  };
-  ${props => props.theme.mediaQuery.s}: {
+  }
+  ${props => props.theme.mediaQuery.s} {
     padding-right: 0;
-  };
+  }
 `;
 
 export const ProjectsImageContainer = styled.div`
   flex: 1 1 50%;
-  margintop: -200px;
+  margin-top: -200px;
 `;
 
 export const ProjectsListLink = styled(AppLink)`
@@ -66,7 +66,7 @@ export const ProjectsListLink = styled(AppLink)`
   line-height: 32px;
   word-break: break-word;
   padding: 0;
-  & > h2: {
+  & > h2 {
     color: ${props => props.theme.palette.textInvert};
     transition: color 0.2s ease;
     font-family: ${props => props.theme.typeography.fontStack.roboto};
@@ -78,7 +78,7 @@ export const ProjectsListLink = styled(AppLink)`
     outline: none;
     vertical-align: baseline;
     background: transparent;
-    &:hover: {
+    &:hover {
       color: ${props => props.theme.palette.textInvertHover};
     }
   }
@@ -89,9 +89,9 @@ export const ProjectsListArticle = styled.article`
   justify-content: flex-end;
   padding: 25px 0;
   width: 100%;
-  ${props => props.theme.mediaQuery.l}: {
+  ${props => props.theme.mediaQuery.l} {
     justify-content: flex-start;
-  };
+  }
 `;
 
 export const ProjectsProjectImage = styled.aside`

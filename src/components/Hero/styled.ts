@@ -31,18 +31,18 @@ export const HeroVideo = styled.video`
   position: fixed;
   z-index: -1;
   ${parallax}
-  @media (min-aspect-ratio: 16:9) : {
+  @media (min-aspect-ratio: 16:9) {
     width: 100%;
     height: auto;
   }
-  @media (max-aspect-ratio: 16:9) : {
+  @media (max-aspect-ratio: 16:9) {
     width: auto;
     height: 100%;
   }
-  ${props => props.theme.mediaQuery.m}: {
+  ${props => props.theme.mediaQuery.m} {
     left: -50%;
     top: -25%;
-  };
+  }
 `;
 
 export const HeroContainer = styled.div`
@@ -62,11 +62,11 @@ export const HeroCopyContainer = styled.div`
   top: 50%;
   left: 50%;
   z-index: 1;
-  transform: translate(-50%;-50%);
+  transform: translate(-50%, -50%);
   width: 500px;
-  ${props => props.theme.mediaQuery.s}: {
+  ${props => props.theme.mediaQuery.s} {
     width: 70%;
-  };
+  }
 `;
 
 export const HeroTagLine = styled.h1`
@@ -94,7 +94,7 @@ export const HeroArrow = styled(FontAwesomeIcon)`
   color: ${props => props.theme.palette.text};
   text-align: center;
   margin: 50px auto 0 auto;
-  &:hover: {
+  &:hover {
     cursor: pointer;
   }
 `;

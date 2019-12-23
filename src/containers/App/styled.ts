@@ -2,21 +2,21 @@ import styled, { createGlobalStyle } from "styled-components";
 import { Element } from "react-scroll";
 
 export const GlobalStyles = createGlobalStyle`
-  html: {
+  html {
     height: 100%;
     background: #000;
-  },
-  body: {
+  }
+  body{
     height: 100%;
     margin: 0;
     padding: 0;
   }
   :root: {
     font-size: 16px;
-    ${props => props.theme.mediaQuery.s}: {
+    ${props => props.theme.mediaQuery.s} {
       font-size: 13px;
     },
-    ${props => props.theme.mediaQuery.xs}: {
+    ${props => props.theme.mediaQuery.xs} {
       font-size: 10px;
     }
   }
@@ -27,9 +27,9 @@ export const AppWrapper = styled.div`
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-  ${props => props.theme.mediaQuery.l}: {
+  ${props => props.theme.mediaQuery.l} {
     flex-direction: column;
-  };
+  }
 `;
 
 export const AppSection = styled(Element)`
@@ -37,10 +37,10 @@ export const AppSection = styled(Element)`
   z-index: 1;
   min-height: 100vh;
   margin-bottom: 150px;
-  &:last-of-type: {
+  &:last-of-type {
     margin-bottom: 0;
   }
-  & > *: {
+  & > * {
     min-height: 100vh;
     height: 100%;
     overflow: hidden;
