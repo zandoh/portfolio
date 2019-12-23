@@ -5,6 +5,7 @@ import ProjectImage from "../ProjectImage/ProjectImage";
 import portfolioImage from "../../assets/portfolio.jpg";
 import wowImage from "../../assets/wow.jpg";
 import quotrImage from "../../assets/quote.jpg";
+import { ProjectsContainer } from "./styled";
 
 const Projects: React.FC<{}> = () => {
   const [projectImage, setProjectImage] = useState("");
@@ -48,7 +49,7 @@ const Projects: React.FC<{}> = () => {
   ];
 
   return (
-    <section className={classes.projectsContainer}>
+    <ProjectsContainer>
       <h1 className={classes.title}>Projects.</h1>
       <p className={classes.description}>
         Feel free to check some of my recent projects below. More can be found
@@ -86,7 +87,7 @@ const Projects: React.FC<{}> = () => {
           )}
         </div>
       </div>
-    </section>
+    </ProjectsContainer>
   );
 };
 
