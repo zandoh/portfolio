@@ -17,6 +17,14 @@ export const svgStyle = {
   right: "4px"
 };
 
+export const temp = `
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 6px;
+  right: 4px;
+`;
+
 export const HeroMainSection = styled.section`
   height: 100%;
   left: 0;

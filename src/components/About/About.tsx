@@ -1,7 +1,4 @@
 import React from "react";
-import { ReactComponent as IconGithub } from "../../assets/github.svg";
-import { ReactComponent as IconLinkedIn } from "../../assets/linkedin.svg";
-import { ReactComponent as IconTwitter } from "../../assets/twitter.svg";
 import { AppLink } from "../AppLink/AppLink";
 import Avatar from "avataaars";
 import {
@@ -10,9 +7,11 @@ import {
   AboutAvatarContainer,
   AboutTitle,
   AboutDescription,
-  AboutIconContainer
-} from './styled'
-import { svgStyle } from "../Hero/styled";
+  AboutIconContainer,
+  StyledIconGithub,
+  StyledIconLinkedIn,
+  StyledIconTwitter
+} from "./styled";
 
 const width: number = 50;
 const height: number = 50;
@@ -34,35 +33,17 @@ const About: React.FC<{}> = () => {
           <AppLink
             link={githubLink}
             title={"GitHub Profile"}
-            child={
-              <IconGithub
-                style={svgStyle}
-                width={width}
-                height={height}
-              />
-            }
+            child={<StyledIconGithub width={width} height={height} />}
           />
           <AppLink
             link={linkedinLink}
             title={"LinkedIn Profile"}
-            child={
-              <IconLinkedIn
-                style={svgStyle}
-                width={width}
-                height={height}
-              />
-            }
+            child={<StyledIconLinkedIn width={width} height={height} />}
           />
           <AppLink
             link={twitterLink}
             title={"Twitter Profile"}
-            child={
-              <IconTwitter
-                style={svgStyle}
-                width={width}
-                height={height}
-              />
-            }
+            child={<StyledIconTwitter width={width} height={height} />}
           />
         </AboutIconContainer>
       </AboutDescriptionContainer>

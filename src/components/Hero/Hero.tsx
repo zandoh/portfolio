@@ -47,18 +47,18 @@ const Hero: React.FC<HeroProps> = ({ changeTheme, checked }) => {
           <HeroTagLine>
             Hello, I'm <HeroContrastText>Zac.</HeroContrastText>
           </HeroTagLine>
+          <HeroDescription>
+            An agile <HeroContrastText>software engineer</HeroContrastText> and{" "}
+            <HeroContrastText>javascript developer</HeroContrastText> based in
+            New York
+          </HeroDescription>
+          <Link to="projects" smooth={true} duration={500}>
+            <HeroArrow
+              className={`animated infinite bounce fa-2x`}
+              icon={["far", "arrow-alt-down"]}
+            />
+          </Link>
         </HeroCopyContainer>
-        <HeroDescription>
-          An agile <HeroContrastText>software engineer</HeroContrastText> and{" "}
-          <HeroContrastText>javascript developer</HeroContrastText> based in New
-          York
-        </HeroDescription>
-        <Link to="projects" smooth={true} duration={500}>
-          <HeroArrow
-            className={`animated infinite bounce fa-2x`}
-            icon={["far", "arrow-alt-down"]}
-          />
-        </Link>
       </HeroContainer>
     </HeroMainSection>
   );

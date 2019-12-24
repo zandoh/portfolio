@@ -1,12 +1,37 @@
 import styled from "styled-components";
+import { ReactComponent as IconGithub } from "../../assets/github.svg";
+import { ReactComponent as IconLinkedIn } from "../../assets/linkedin.svg";
+import { ReactComponent as IconTwitter } from "../../assets/twitter.svg";
 
-export const svgStyles = `
+export const StyledIconTwitter = styled(IconTwitter)`
   margin-right: 50px;
-  transition: color .2s ease;
+  transition: color 0.2s ease;
   fill: ${props => props.theme.palette.textInvert};
   &:hover {
     fill: ${props => props.theme.palette.textInvertHover};
-  };
+  }
+  ${props => props.theme.mediaQuery.l} {
+    margin-right: 0;
+  }
+`;
+export const StyledIconLinkedIn = styled(IconLinkedIn)`
+  margin-right: 50px;
+  transition: color 0.2s ease;
+  fill: ${props => props.theme.palette.textInvert};
+  &:hover {
+    fill: ${props => props.theme.palette.textInvertHover};
+  }
+  ${props => props.theme.mediaQuery.l} {
+    margin-right: 0;
+  }
+`;
+export const StyledIconGithub = styled(IconGithub)`
+  margin-right: 50px;
+  transition: color 0.2s ease;
+  fill: ${props => props.theme.palette.textInvert};
+  &:hover {
+    fill: ${props => props.theme.palette.textInvertHover};
+  }
   ${props => props.theme.mediaQuery.l} {
     margin-right: 0;
   }
@@ -21,7 +46,7 @@ export const AboutWrapper = styled.section`
   }
   ${props => props.theme.mediaQuery.l} {
     flex-direction: column-reverse;
-    height: auto !important;
+    height: auto;
   }
 `;
 
