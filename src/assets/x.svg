@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<svg x="0" y="0" width={props.width} height={props.height}>
-    <line x1="2" y1="22" 
-          x2="22" y2="2"
-          stroke-width="2"/>
-    <line x1="2" y1="2" 
-          x2="22" y2="22"
-          stroke-width="2"/>
-</svg>
